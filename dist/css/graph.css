@@ -1,0 +1,133 @@
+.w {
+    padding: 16px;
+    position: absolute;
+    z-index: 4;
+    border: 1px solid #2e6f9a;
+    box-shadow: 2px 2px 19px #e0e0e0;
+    -o-box-shadow: 2px 2px 19px #e0e0e0;
+    -webkit-box-shadow: 2px 2px 19px #e0e0e0;
+    -moz-box-shadow: 2px 2px 19px #e0e0e0;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    opacity: 0.8;
+    cursor: move;
+    background-color: white;
+    font-size: 11px;
+    -webkit-transition: background-color 0.25s ease-in;
+    -moz-transition: background-color 0.25s ease-in;
+    transition: background-color 0.25s ease-in;
+}
+
+.graph-canvas {
+    height: 830px;
+    margin-left: 0;
+    max-height: 830px;
+    border: 1px solid #CCC;
+    background-color: white;
+    display: flex;
+    overflow: scroll !important;
+    cursor: default;
+    position: relative;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+}
+
+#n172-20-3-0 {
+    left: 43px; top: 35px;
+}
+
+#n172-20-1-146 {
+    left: 211px; top: 132px;
+}
+
+#n10-68-72-0{
+    left: 411px; top: 302px;
+}
+
+#n10-68-198-212 {
+    left: 681px; top: 262px;
+}
+
+#n172-20-1-154 {
+    left: 299px; top: 372px;
+}
+
+#n172-20-1-143 {
+    left: 1043px; top: 309px;
+}
+
+#n172-20-1-142 {
+    left: 1446px; top: 382px;
+}
+
+#n172-20-1-151 {
+    left: 353px; top: 558px;
+}
+
+#n10-68-103-21 {
+    left: 626px; top: 521px;
+}
+
+#n172-20-1-152 {
+    left: 813px; top: 548px;
+}
+
+#n172-20-1-150 {
+    left: 598px; top: 669px;
+}
+
+#n10-68-162-142 {
+    left: 462px; top: 480px;
+}
+
+#n172-20-1-145 {
+    left: 1102px; top: 233px;
+}
+
+#n10-68-221-249 {
+    left: 1422px; top: 195px;
+}
+
+#n10-68-219-18 {
+    left: 1110px; top: 150px;
+}
+
+#n172-20-1-148 {
+    left: 810px; top: 388px;
+}
+
+#n172-20-1-144 {
+    left: 1446px; top: 293px;
+}
+
+#n10-68-127-167 {
+    left: 1454px; top: 464px;
+}
+
+#n172-20-1-153 {
+    left: 95px; top: 591px;
+}
+
+#n10-68-51-48 {
+    left: 1266px; top: 457px;
+}
+
+#n10-68-178-232 {
+    left: 1338px; top: 534px;
+}
+
+#n10-68-89-65 {
+    left: 61px; top: 472px;
+}
+
+#n10-68-94-15 {
+    left: 1006px; top: 663px;
+}
+
+#n172-20-1-147 {
+    left: 1226px; top: 593px;
+}
+
+#n172-20-1-149 {
+    left: 1149px; top: 653px;
+}
