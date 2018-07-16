@@ -1,15 +1,29 @@
 let relation = [], nodes = [];
 
 function getData() {
+    let data = {
+        "size": 8000,
+        "query": {
+            "range": {
+                "@timestamp": {
+                    "lte": "2018-07-04T20:16:01",
+                    "gte":"2018-07-04T20:15:30"
+                }
+            }
+        }
+    };
     $.ajax({
-        type: "GET",
-        url: "../logs.txt",
-        dataType: "text",
+        type: "POST",
+        url: "http://172.18.196.96:9200/filebeat-6.2.3-*/doc/_search?filter_path=hits.hits._source.message",
+        dataType: "json",
         async: false,
+        data: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+        },
         success: function (data) {
-            let lines = data.split('\n');
-            for (let line of lines) {
-                let temp = line.split('\t');
+            for (let source of data.hits.hits) {
+                let temp = source._source.message.split('\t');
                 // 过滤掉不是该应用的数据
                 if (temp[1] !== undefined && temp[1].search('sock-shop') !== -1) {
                     // 存储关系
@@ -48,7 +62,7 @@ function getData() {
 function drawByJsPlumb(nodes, links) {
     // your jsPlumb related init code goes here
     // setup some defaults for jsPlumb.
-    var instance = jsPlumb.getInstance({
+    let instance = jsPlumb.getInstance({
         Endpoint: ["Dot", {
             radius: 2
         }],
@@ -76,7 +90,7 @@ function drawByJsPlumb(nodes, links) {
     //
     // initialise element as connection targets and source.
     //
-    var initNode = function (el) {
+    let initNode = function (el) {
 
         // initialise draggable elements.
         instance.draggable(el);
