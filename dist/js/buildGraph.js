@@ -1,3 +1,50 @@
+let relation = [], nodes = [];
+
+function getData() {
+    $.ajax({
+        type: "GET",
+        url: "../logs.txt",
+        dataType: "text",
+        async: false,
+        success: function (data) {
+            let lines = data.split('\n');
+            for (let line of lines) {
+                let temp = line.split('\t');
+                // 过滤掉不是该应用的数据
+                if (temp[1] !== undefined && temp[1].search('sock-shop') !== -1) {
+                    // 存储关系
+                    let trans = temp[3].split('->');
+                    let source = 'n' + trans[0].split(':')[0].replace(/\./g,"-"), target = 'n' + trans[1].split(':')[0].replace(/\./g,"-");
+                    if (source === 'n172-20-3-131')
+                        continue;
+                    // 判断并放入节点集合
+                    if (nodes.indexOf(source) === -1) {
+                        nodes.push(source);
+                    }
+                    if (nodes.indexOf(target) === -1) {
+                        nodes.push(target);
+                    }
+                    if (relation[source] === undefined) {
+                        // 新增一个source
+                        relation[source] = [target];
+                    }
+                    else if (relation[source].indexOf(target) === -1){
+                        relation[source].push(target);
+                    }
+                    // $('#main').append('<p>' + line + '</p>');
+                }
+            }
+            console.log(nodes);
+            console.log(relation);
+
+            // drawByEcharts(nodes, relation);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert(textStatus);
+        }
+    });
+}
+
 function drawByJsPlumb(nodes, links) {
     // your jsPlumb related init code goes here
     // setup some defaults for jsPlumb.
