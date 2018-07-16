@@ -1,13 +1,15 @@
 let relation = [], nodes = [];
-
+// Create a new directed graph
+let g = new dagre.graphlib.Graph();
 function getData() {
+    let range = getLogTimeRange();
     let data = {
         "size": 8000,
         "query": {
             "range": {
                 "@timestamp": {
-                    "lte": "2018-07-04T20:16:01",
-                    "gte":"2018-07-04T20:15:30"
+                    "lte": range.end,
+                    "gte": range.start,
                 }
             }
         }
@@ -51,6 +53,25 @@ function getData() {
             console.log(nodes);
             console.log(relation);
 
+            // Set an object for the graph label
+            g.setGraph({});
+            // Default to assigning a new object as a label for each new edge.
+            g.setDefaultEdgeLabel(function() { return {}; });
+            // Set some parameter of the graph
+            g.graph().nodesep = 10;
+            g.graph().ranksep = 100;
+
+            // Add nodes to the graph.
+            for (let node of nodes) {
+                g.setNode(node, { width: 110, height: 60 });
+            }
+            // Add edges to the graph.
+            for (let source in relation) {
+                for (let target of relation[source]) {
+                    g.setEdge(source, target);
+                }
+            }
+            dagre.layout(g);
             // drawByEcharts(nodes, relation);
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -59,7 +80,7 @@ function getData() {
     });
 }
 
-function drawByJsPlumb(nodes, links) {
+function drawByJsPlumb(g, links) {
     // your jsPlumb related init code goes here
     // setup some defaults for jsPlumb.
     let instance = jsPlumb.getInstance({
@@ -79,12 +100,13 @@ function drawByJsPlumb(nodes, links) {
                 foldback: 0.8
             }],
         ],
-        Container: "canvas"
+        Anchor: ['Top', 'Bottom'],
+        Container: "canvas",
     });
 
     window.jsp = instance;
     instance.registerConnectionType("basic", {
-        anchor: "Continuous",
+        // anchor: "Continuous",
         connector: "StateMachine"
     });
     //
@@ -103,14 +125,17 @@ function drawByJsPlumb(nodes, links) {
     console.log('haha');
     // suspend drawing and initialise.
     instance.batch(function () {
-        for (let node of nodes) {
+        // v是结点id，g.node(v)是画图组建中结点的数据
+        g.nodes().forEach(function(v) {
             let d = document.createElement("div");
             d.className = "w";
-            d.id = node;
-            d.innerHTML = node.replace(/\-/g,".").substr(1);
+            d.id = v;
+            d.innerHTML = v.replace(/\-/g,".").substr(1);
+            d.style.left = g.node(v).x  + "px";
+            d.style.top = g.node(v).y + "px";
             instance.getContainer().appendChild(d);
             initNode(d);
-        }
+        });
         // and finally, make a few connections
         for (let rel in links) {
             for (let target of links[rel]) {
@@ -118,9 +143,18 @@ function drawByJsPlumb(nodes, links) {
                     source: rel,
                     target: target,
                     type: "basic",
+                    // anchor: ['Top', 'Bottom']
                 });
             }
         }
     });
     jsPlumb.fire("jsPlumbDemoLoaded", instance);
+}
+
+function getLogTimeRange() {
+    let d = new Date(), time = {};
+    time.end = d.toISOString();
+    d.setSeconds(d.getSeconds() - 30);
+    time.start = d.toISOString();
+    return time;
 }

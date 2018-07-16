@@ -387,13 +387,14 @@ desired effect
 <script src="../dist/js/adminlte.min.js"></script>
 <script src="../dist/js/jsplumb.js"></script>
 <script src="../dist/js/jsplumbtoolkit.js"></script>
+<script src="../dist/js/dagre.min.js"></script>
 <script src="../dist/js/buildGraph.js"></script>
 <script>
     $(document).ready(function(){
             getData();
 
             jsPlumb.ready(function () {
-                drawByJsPlumb(nodes, relation);
+                drawByJsPlumb(g, relation);
             });
     })
 </script>
