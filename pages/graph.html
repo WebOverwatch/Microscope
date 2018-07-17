@@ -23,14 +23,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../dist/css/skins/skin-blue.min.css">
 
     <link rel="stylesheet" href="../dist/css/graph.css">
-
+    <link rel="stylesheet" href="../dist/css/fancySelect.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="../https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="../https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -254,7 +249,13 @@ desired effect
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-
+            <select id="type-select">
+                <option value="service" selected="selected">Service Map</option>
+                <option value="pod">Pod Map</option>
+            </select>
+            <select id="app-select">
+                <option selected="selected">sock-shop</option>
+            </select>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
                 <li class="active">程序异常诊断</li>
@@ -262,11 +263,12 @@ desired effect
         </section>
 
         <!-- Main content -->
-        <section class="content">
+        <section class="content" style="padding-top:0">
             <!-- Info boxes -->
             <div class="row">
                 <div class="box-header with-border">
                     <div class="graph-canvas" id="canvas"></div>
+                    <button class="fc-button" id="stop-btn">停止刷新</button>
                 </div>
             </div>
             <!-- /.row -->
@@ -388,16 +390,9 @@ desired effect
 <script src="../dist/js/jsplumb.js"></script>
 <script src="../dist/js/jsplumbtoolkit.js"></script>
 <script src="../dist/js/dagre.min.js"></script>
+<script src="../dist/js/fancySelect.js"></script>
+<script src="../dist/js/map-data.js"></script>
 <script src="../dist/js/buildGraph.js"></script>
-<script>
-    $(document).ready(function(){
-            getData();
-
-            jsPlumb.ready(function () {
-                drawByJsPlumb(g, relation);
-            });
-    })
-</script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
