@@ -220,7 +220,6 @@ $(document).ready(function () {
     $('#app-select').fancySelect();
     $('#type-select').fancySelect().on('change.fs', function() {
         $(this).trigger('change.$');
-        alert(test);
     });
     $('.options').css('padding', '0');
     // $('#type-select').removeClass('fancy-select');
