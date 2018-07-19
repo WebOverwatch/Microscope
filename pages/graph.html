@@ -255,9 +255,10 @@ desired effect
                     <option value="pod" selected="selected">Pod Map</option>
                 </select>
                 <select id="app-select">
-                    <option selected="selected">sock-shop</option>
+                    <option value="system" selected="selected">system</option>
+                    <option value="sock-shop">sock-shop</option>
                 </select>
-                <button type="button" class="btn btn-white-self btn-primary" data-toggle="modal" data-target="#modal-metrics">查看应用指标</button>
+                <button type="button" class="btn btn-white-self btn-primary disabled" data-toggle="modal" data-target="#modal-metrics" id="btn-show" disabled="disabled">查看应用指标</button>
             </div>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
@@ -273,7 +274,6 @@ desired effect
                 <div class="box-header with-border">
                     <div class="graph-canvas" id="canvas"></div>
                     <button class="fc-button" id="stop-btn">停止刷新</button>
-                    <iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop-performance?from=1531984474701&to=1531988074701&panelId=1" width="450" height="200" frameborder="0"></iframe>
                 </div>
             </div>
             <!-- /.row -->
@@ -420,11 +420,8 @@ desired effect
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Pod性能</h4>
-                    <button id="refresh">刷新</button>
                 </div>
-                <div class="modal-body-self">
-                    <iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop-performance?from=1531984474701&to=1531988074701&panelId=1" width="450" height="200" frameborder="0" id="frame" name="frame"></iframe>
-                </div>
+                <div class="modal-body-self" style="height: 430px"></div>
             </div>
             <!-- /.modal-content -->
         </div>

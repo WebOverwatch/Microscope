@@ -1,8 +1,8 @@
-let relation = [], nodes = [], nodesIP = [], tempType = 'pod';
+let relation = [], nodes = [], nodesIP = [], tempType = 'pod', tempApp = 'system';
 // Create a new directed graph
 let g;
 
-function getData(type) {
+function getData() {
     let range = getLogTimeRange();
     let data = {
         "from": 0,
@@ -42,7 +42,8 @@ function getData(type) {
             for (let doc of data.hits.hits) {
                 let temp = doc._source.message.split('\t');
                 // 过滤掉不是该应用的数据
-                if (temp[1] !== undefined && temp[1].search('sock-shop') !== -1) {
+                if ((tempApp === 'sock-shop' && temp[1] !== undefined && temp[1].search('sock-shop') !== -1) ||
+                    (tempApp === 'system' && temp[1] !== undefined && temp[1].startsWith('k8s'))) {
                     // 存储关系
                     let trans = temp[3].split('->');
                     let source = trans[0].split(':')[0], target = trans[1].split(':')[0];
@@ -50,7 +51,7 @@ function getData(type) {
                     if (source === '172.20.1.164')
                         continue;
                     if (source in pod_map && target in pod_map) {
-                        if (type === 'pod') {
+                        if (tempType === 'pod') {
                             source = 'n' + source.replace(/\./g, "-");
                             target = 'n' + target.replace(/\./g, "-");
                             if (nodes.indexOf(source) === -1) {
@@ -69,30 +70,36 @@ function getData(type) {
                                 relation[source].push(target);
                             }
                         }
-                        else if (type === 'service') {
+                        else if (tempType === 'service') {
+                            let findSource = false, findTarget = false;
                             for (let key in service_map) {
-                                if (service_map[key].indexOf(source) !== -1)
+                                if (findSource && findTarget)
+                                    break;
+                                if (service_map[key].indexOf(source) !== -1) {
                                     source = key;
-                                if (service_map[key].indexOf(target) !== -1)
+                                    findSource = true;
+                                }
+                                if (service_map[key].indexOf(target) !== -1) {
                                     target = key;
-                                if (source === 'catalogue' && target === '172.20.2.166') {
-                                    console.log((service_map['catalogue-db']) + ', ' + service_map['catalogue-db'].indexOf(target))
+                                    findTarget = true;
                                 }
                             }
-                            if (nodes.indexOf(source) === -1) {
-                                nodes.push(source);
-                                nodesIP.push(source);
-                            }
-                            if (nodes.indexOf(target) === -1) {
-                                nodes.push(target);
-                                nodesIP.push(target)
-                            }
-                            if (relation[source] === undefined) {
-                                // 新增一个source
-                                relation[source] = [target];
-                            }
-                            else if (relation[source].indexOf(target) === -1) {
-                                relation[source].push(target);
+                            if (findTarget && findTarget) {
+                                if (nodes.indexOf(source) === -1) {
+                                    nodes.push(source);
+                                    nodesIP.push(source);
+                                }
+                                if (nodes.indexOf(target) === -1) {
+                                    nodes.push(target);
+                                    nodesIP.push(target)
+                                }
+                                if (relation[source] === undefined) {
+                                    // 新增一个source
+                                    relation[source] = [target];
+                                }
+                                else if (relation[source].indexOf(target) === -1) {
+                                    relation[source].push(target);
+                                }
                             }
                         }
 
@@ -197,6 +204,11 @@ function drawByJsPlumb(g, links) {
     if (tempType === 'pod') {
         $('.node').dblclick(function () {
             $('#modal-pod-performance').modal();
+            if ($('#modal-pod-performance').find('.modal-body-self').children().length === 0) {
+                $('#modal-pod-performance').find('.modal-body-self').append(
+                    '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop-performance?from=now-1h&to=now&panelId=1" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
+                    '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop-performance?from=now-1h&to=now&panelId=2" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
+            }
         });
     }
 }
@@ -219,14 +231,13 @@ function createNode(id, ip) {
         '<span class="glyphicon glyphicon-time node-icon"></span><span class="node-big-font"></span><span class="node-small-font">ms</span>' +
         '</div>' +
         '<div class="node-service-div">' +
-        '<span class="fa fa-cube node-icon"></span><span class="node-medium-font">' + ip + '</span>' +
+        '<span class="fa fa-cube node-icon"></span><span class="node-medium-font">' + (ip === undefined ? 'NA' : ip) + '</span>' +
         '</div>';
     return node;
 }
 
 $(document).ready(function () {
-
-    getData(tempType);
+    getData();
 
     jsPlumb.ready(function () {
         drawByJsPlumb(g, relation);
@@ -234,7 +245,8 @@ $(document).ready(function () {
 
     let refreshData = setInterval(function () {
         for (let ip of nodesIP) {
-            let url = tempType === 'pod' ? 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{instance=~"' + ip + ':.*"}[1m])) by (name, le))' : 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{name="' + ip + '"}[1m])) by (name, le))';
+            let url = tempType === 'pod' ? 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{instance=~"' + ip + ':.*"}[1m])) by (name, le))'
+                : 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{name="' + ip + '"}[1m])) by (name, le))';
             $.ajax({
                 dataType: 'json',
                 type: "GET",
@@ -258,23 +270,35 @@ $(document).ready(function () {
     $('#stop-btn').click(function () {
         clearInterval(refreshData);
     });
+    // $('#btn-show').click(function () {
+    //     $('#modal-metrics').modal();
+    // });
 
-    $('#app-select').fancySelect();
+    $('#app-select').fancySelect().on('change.fs', function () {
+        $(this).trigger('change.$');
+        let app = $('#app-select option:selected').eq(0).val();
+        if (tempApp != app) {
+            tempApp = app;
+            if (tempApp === 'system')
+                $('#btn-show').addClass('disabled').attr('disabled', 'disabled');
+            else
+                $('#btn-show').removeClass('disabled').removeAttr('disabled');
+            getData();
+            $('#canvas').empty();
+            drawByJsPlumb(g, relation);
+        }
+    });
     $('#type-select').fancySelect().on('change.fs', function () {
         $(this).trigger('change.$');
         let type = $('#type-select option:selected').eq(0).val();
         if (tempType !== type) {
             tempType = type;
-            getData(tempType);
+            getData();
             $('#canvas').empty();
             drawByJsPlumb(g, relation);
         }
         // alert(document.getElementById('type-select').getElementsByClassName('selected').length);
     });
+
     $('.options').css('padding', '0');
-    // $('#type-select').removeClass('fancy-select');
-    $('#refresh').click(function () {
-        console.log(document.frames("frame"));
-        document.frames("frame").document.location.reload(true);
-    })
 });
