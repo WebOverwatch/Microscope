@@ -72,10 +72,32 @@
 }
 
 .node-medium-font {
-    font-size: 15px
+    font-size: 13.5px
 }
 
 .node-small-font {
     margin-left: 2px;
     font-size: 11px
+}
+
+.modal-dialog-self {
+    width: 1200px;
+    margin: 30px auto;
+}
+
+.modal-body-self {
+    position: relative;
+    padding: 8px;
+}
+
+.div-title {
+    width: 550px;
+}
+
+.btn-white-self {
+    margin-top: 1.5px;
+    /*background-color: #3c8dbc;*/
+    /*border-color: #367fa9;*/
+    float: right;
+    width: 120px;
 }

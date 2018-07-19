@@ -249,17 +249,21 @@ desired effect
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <select id="type-select">
-                <option value="service" selected="selected">Service Map</option>
-                <option value="pod">Pod Map</option>
-            </select>
-            <select id="app-select">
-                <option selected="selected">sock-shop</option>
-            </select>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-                <li class="active">程序异常诊断</li>
-            </ol>
+            <div class="div-title">
+                <select id="type-select">
+                    <option value="service">Service Map</option>
+                    <option value="pod" selected="selected">Pod Map</option>
+                </select>
+                <select id="app-select">
+                    <option selected="selected">sock-shop</option>
+                </select>
+                <button type="button" class="btn btn-white-self btn-primary" data-toggle="modal" data-target="#modal-metrics">查看应用指标</button>
+            </div>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+                    <li class="active">程序异常诊断</li>
+                </ol>
+
         </section>
 
         <!-- Main content -->
@@ -269,6 +273,7 @@ desired effect
                 <div class="box-header with-border">
                     <div class="graph-canvas" id="canvas"></div>
                     <button class="fc-button" id="stop-btn">停止刷新</button>
+                    <iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop-performance?from=1531984474701&to=1531988074701&panelId=1" width="450" height="200" frameborder="0"></iframe>
                 </div>
             </div>
             <!-- /.row -->
@@ -376,6 +381,56 @@ desired effect
     <!-- Add the sidebar's background. This div must be placed
     immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
+
+    <div class="modal fade" id="modal-metrics">
+        <div class="modal-dialog-self">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">应用指标</h4>
+                </div>
+                <div class="modal-body-self">
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#fa-icons" data-toggle="tab">资源总览</a></li>
+                            <li><a href="#glyphicons" data-toggle="tab">性能总览</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="fa-icons">
+                                <iframe src="http://172.18.196.96:37489/dashboard/db/sock-shop-resources?from=now-1h&to=now" width="100%" height="700px" frameborder="0"></iframe>
+                            </div>
+                            <div class="tab-pane" id="glyphicons">
+                                <iframe src="http://172.18.196.96:37489/dashboard/db/sock-shop-performance?from=now-1h&to=now" width="100%" height="700px" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div class="modal fade" id="modal-pod-performance">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Pod性能</h4>
+                    <button id="refresh">刷新</button>
+                </div>
+                <div class="modal-body-self">
+                    <iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop-performance?from=1531984474701&to=1531988074701&panelId=1" width="450" height="200" frameborder="0" id="frame" name="frame"></iframe>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 </div>
 <!-- ./wrapper -->
 

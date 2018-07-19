@@ -1,8 +1,8 @@
-let relation = [], nodes = [], nodesIP = [];
+let relation = [], nodes = [], nodesIP = [], tempType = 'pod';
 // Create a new directed graph
-let g = new dagre.graphlib.Graph();
+let g;
 
-function getData() {
+function getData(type) {
     let range = getLogTimeRange();
     let data = {
         "from": 0,
@@ -27,38 +27,81 @@ function getData() {
             'Content-Type': 'application/json',
         },
         success: function (data) {
-            console.log(JSON.stringify(data));
-            for (let source of data.hits.hits) {
-                let temp = source._source.message.split('\t');
+            // console.log(JSON.stringify(data));
+            g = new dagre.graphlib.Graph();
+            // Set an object for the graph label
+            g.setGraph({});
+            // Default to assigning a new object as a label for each new edge.
+            g.setDefaultEdgeLabel(function () {
+                return {};
+            });
+            // Set some parameter of the graph
+            g.graph().nodesep = 10;
+            g.graph().ranksep = 110;
+            relation = [], nodes = [], nodesIP = [];
+            for (let doc of data.hits.hits) {
+                let temp = doc._source.message.split('\t');
                 // 过滤掉不是该应用的数据
                 if (temp[1] !== undefined && temp[1].search('sock-shop') !== -1) {
                     // 存储关系
                     let trans = temp[3].split('->');
-                    let source = 'n' + trans[0].split(':')[0].replace(/\./g, "-"),
-                        target = 'n' + trans[1].split(':')[0].replace(/\./g, "-");
-                    // console.log(trans[0].split(':')[0] + ' -> ' + trans[1].split(':')[0]);
-                    if (source === 'n172-20-1-164')
+                    let source = trans[0].split(':')[0], target = trans[1].split(':')[0];
+
+                    if (source === '172.20.1.164')
                         continue;
-                    if (trans[0].split(':')[0] in pod_map && trans[1].split(':')[0] in pod_map) {
-                        if (nodes.indexOf(source) === -1) {
-                            nodes.push(source);
-                            nodesIP.push(trans[0].split(':')[0]);
+                    if (source in pod_map && target in pod_map) {
+                        if (type === 'pod') {
+                            source = 'n' + source.replace(/\./g, "-");
+                            target = 'n' + target.replace(/\./g, "-");
+                            if (nodes.indexOf(source) === -1) {
+                                nodes.push(source);
+                                nodesIP.push(trans[0].split(':')[0]);
+                            }
+                            if (nodes.indexOf(target) === -1) {
+                                nodes.push(target);
+                                nodesIP.push(trans[1].split(':')[0])
+                            }
+                            if (relation[source] === undefined) {
+                                // 新增一个source
+                                relation[source] = [target];
+                            }
+                            else if (relation[source].indexOf(target) === -1) {
+                                relation[source].push(target);
+                            }
                         }
-                        if (nodes.indexOf(target) === -1) {
-                            nodes.push(target);
-                            nodesIP.push(trans[1].split(':')[0])
+                        else if (type === 'service') {
+                            for (let key in service_map) {
+                                if (service_map[key].indexOf(source) !== -1)
+                                    source = key;
+                                if (service_map[key].indexOf(target) !== -1)
+                                    target = key;
+                                if (source === 'catalogue' && target === '172.20.2.166') {
+                                    console.log((service_map['catalogue-db']) + ', ' + service_map['catalogue-db'].indexOf(target))
+                                }
+                            }
+                            if (nodes.indexOf(source) === -1) {
+                                nodes.push(source);
+                                nodesIP.push(source);
+                            }
+                            if (nodes.indexOf(target) === -1) {
+                                nodes.push(target);
+                                nodesIP.push(target)
+                            }
+                            if (relation[source] === undefined) {
+                                // 新增一个source
+                                relation[source] = [target];
+                            }
+                            else if (relation[source].indexOf(target) === -1) {
+                                relation[source].push(target);
+                            }
                         }
-                        if (relation[source] === undefined) {
-                            // 新增一个source
-                            relation[source] = [target];
-                        }
-                        else if (relation[source].indexOf(target) === -1) {
-                            relation[source].push(target);
-                        }
+
                         // $('#main').append('<p>' + line + '</p>');
                     }
+
                 }
             }
+
             console.log(nodesIP);
             console.log(relation);
 
@@ -131,7 +174,7 @@ function drawByJsPlumb(g, links) {
             let d = document.createElement("div");
             d.className = 'node';
             d.id = v;
-            d.innerHTML = createNode(v, v.replace(/\-/g, ".").substr(1));
+            d.innerHTML = createNode(v, tempType === 'pod' ? v.replace(/\-/g, ".").substr(1) : service_name[v]);
             d.style.left = g.node(v).x + "px";
             d.style.top = g.node(v).y + "px";
             instance.getContainer().appendChild(d);
@@ -150,6 +193,12 @@ function drawByJsPlumb(g, links) {
         }
     });
     jsPlumb.fire("jsPlumbDemoLoaded", instance);
+
+    if (tempType === 'pod') {
+        $('.node').dblclick(function () {
+            $('#modal-pod-performance').modal();
+        });
+    }
 }
 
 function getLogTimeRange() {
@@ -161,13 +210,14 @@ function getLogTimeRange() {
 }
 
 function createNode(id, ip) {
+    // console.log(ip + ': ' + (ip in pod_map ? pod_map[ip] : service_map[ip]));
     let node =
         '<div class="node-podname-div">' +
-        '<p class="node-auto-hidden-font">' + pod_map[ip] + '</p>' +
+        '<p class="node-auto-hidden-font">' + (ip in pod_map ? pod_map[ip] : id) + '</p>' +
         '</div>' +
         '<div class="node-lantancy-div">' +
         '<span class="glyphicon glyphicon-time node-icon"></span><span class="node-big-font"></span><span class="node-small-font">ms</span>' +
-        '</div>\n' +
+        '</div>' +
         '<div class="node-service-div">' +
         '<span class="fa fa-cube node-icon"></span><span class="node-medium-font">' + ip + '</span>' +
         '</div>';
@@ -175,17 +225,8 @@ function createNode(id, ip) {
 }
 
 $(document).ready(function () {
-    // Set an object for the graph label
-    g.setGraph({});
-    // Default to assigning a new object as a label for each new edge.
-    g.setDefaultEdgeLabel(function () {
-        return {};
-    });
-    // Set some parameter of the graph
-    g.graph().nodesep = 10;
-    g.graph().ranksep = 110;
 
-    getData();
+    getData(tempType);
 
     jsPlumb.ready(function () {
         drawByJsPlumb(g, relation);
@@ -193,14 +234,15 @@ $(document).ready(function () {
 
     let refreshData = setInterval(function () {
         for (let ip of nodesIP) {
+            let url = tempType === 'pod' ? 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{instance=~"' + ip + ':.*"}[1m])) by (name, le))' : 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{name="' + ip + '"}[1m])) by (name, le))';
             $.ajax({
                 dataType: 'json',
                 type: "GET",
                 cache: 'false',
-                url: 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{instance=~"' + ip + ':.*"}[1m])) by (name, le))',
+                url: url,
                 success: function (data) {
                     if (data.status === 'success') {
-                        let id = '#n' + ip.replace(/\./g, "-");
+                        let id = tempType === 'pod' ? ('#n' + ip.replace(/\./g, "-")) : '#' + ip;
                         if (data.data.result.length === 0) {
                             $(id).find('.node-big-font').eq(0).html('NA');
                         }
@@ -211,16 +253,28 @@ $(document).ready(function () {
                 }
             });
         }
-    }, 1000);
+    }, 2000);
 
     $('#stop-btn').click(function () {
         clearInterval(refreshData);
     });
 
     $('#app-select').fancySelect();
-    $('#type-select').fancySelect().on('change.fs', function() {
+    $('#type-select').fancySelect().on('change.fs', function () {
         $(this).trigger('change.$');
+        let type = $('#type-select option:selected').eq(0).val();
+        if (tempType !== type) {
+            tempType = type;
+            getData(tempType);
+            $('#canvas').empty();
+            drawByJsPlumb(g, relation);
+        }
+        // alert(document.getElementById('type-select').getElementsByClassName('selected').length);
     });
     $('.options').css('padding', '0');
     // $('#type-select').removeClass('fancy-select');
+    $('#refresh').click(function () {
+        console.log(document.frames("frame"));
+        document.frames("frame").document.location.reload(true);
+    })
 });
