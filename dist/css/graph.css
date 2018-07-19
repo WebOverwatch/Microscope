@@ -90,6 +90,7 @@
 .modal-body-self {
     position: relative;
     padding: 8px;
+    height: 430px;
 }
 
 .div-title {
@@ -102,4 +103,10 @@
     /*border-color: #367fa9;*/
     float: right;
     width: 120px;
+}
+
+.div-no-data {
+    width: 400px;
+    margin: 80px auto;
+    text-align: center;
 }

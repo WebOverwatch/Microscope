@@ -22,6 +22,7 @@ function getData() {
         url: "http://172.18.196.96:9200/filebeat-6.2.3-*/doc/_search?filter_path=hits.hits._source.message",
         dataType: "json",
         async: false,
+        cache: 'false',
         data: JSON.stringify(data),
         headers: {
             'Content-Type': 'application/json',
@@ -203,11 +204,22 @@ function drawByJsPlumb(g, links) {
 
     if (tempType === 'pod') {
         $('.node').dblclick(function () {
-            $('#modal-pod-performance').modal();
-            if ($('#modal-pod-performance').find('.modal-body-self').children().length === 0) {
-                $('#modal-pod-performance').find('.modal-body-self').append(
-                    '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop-performance?from=now-1h&to=now&panelId=1" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
-                    '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop-performance?from=now-1h&to=now&panelId=2" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
+            let pod_name = $(this).find('.node-auto-hidden-font').eq(0).text();
+            console.log(pod_name + ': ' + (pod_name in performance_map));
+            if (pod_name in performance_map) {
+                $('#modal-pod-performance-body').empty();
+                $('#modal-pod-performance').modal();
+                if ($('#modal-pod-performance').find('.modal-body-self').children().length === 0) {
+                    $('#modal-pod-performance').find('.modal-body-self').append(
+                        '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
+                        '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
+                }
+            }
+            else {
+                $('#modal-pod-performance-body').empty().append('<div class="div-no-data"><img src="../dist/img/error.png"></img><h3><i class="fa fa-warning text-yellow"></i> Oops! Not data for this pod.</h3>' +
+                    '<p>We could not find the performace data you were looking for.' +
+                    'Meanwhile, you may <a href="#" data-dismiss="modal">return to page</a> or try other function.</p></div>');
+                $('#modal-pod-performance').modal();
             }
         });
     }
@@ -236,43 +248,46 @@ function createNode(id, ip) {
     return node;
 }
 
+function refreshData() {
+    for (let ip of nodesIP) {
+        let url = tempType === 'pod' ? 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{instance=~"' + ip + ':.*"}[1m])) by (name, le))'
+            : 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{name="' + ip + '"}[1m])) by (name, le))';
+        $.ajax({
+            dataType: 'json',
+            type: "GET",
+            cache: 'false',
+            url: url,
+            success: function (data) {
+                if (data.status === 'success') {
+                    let id = tempType === 'pod' ? ('#n' + ip.replace(/\./g, "-")) : '#' + ip;
+                    if (data.data.result.length === 0) {
+                        $(id).find('.node-big-font').eq(0).html('NA');
+                    }
+                    else {
+                        $(id).find('.node-big-font').eq(0).html((data.data.result[0].value[1] * 1000).toFixed(2));
+                    }
+                }
+            }
+        });
+    }
+}
+
 $(document).ready(function () {
     getData();
 
     jsPlumb.ready(function () {
         drawByJsPlumb(g, relation);
     });
-
-    let refreshData = setInterval(function () {
-        for (let ip of nodesIP) {
-            let url = tempType === 'pod' ? 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{instance=~"' + ip + ':.*"}[1m])) by (name, le))'
-                : 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{name="' + ip + '"}[1m])) by (name, le))';
-            $.ajax({
-                dataType: 'json',
-                type: "GET",
-                cache: 'false',
-                url: url,
-                success: function (data) {
-                    if (data.status === 'success') {
-                        let id = tempType === 'pod' ? ('#n' + ip.replace(/\./g, "-")) : '#' + ip;
-                        if (data.data.result.length === 0) {
-                            $(id).find('.node-big-font').eq(0).html('NA');
-                        }
-                        else {
-                            $(id).find('.node-big-font').eq(0).html((data.data.result[0].value[1] * 1000).toFixed(2));
-                        }
-                    }
-                }
-            });
-        }
-    }, 2000);
+    refreshData();
+    let refreshDataInterval = setInterval('refreshData()', 3000);
 
     $('#stop-btn').click(function () {
-        clearInterval(refreshData);
+        clearInterval(refreshDataInterval);
     });
-    // $('#btn-show').click(function () {
-    //     $('#modal-metrics').modal();
-    // });
+    $('.node').hover(function () {
+        let value = $(this).find('.node-auto-hidden-font').text();
+        $(this).attr('title',value);
+    });
 
     $('#app-select').fancySelect().on('change.fs', function () {
         $(this).trigger('change.$');
