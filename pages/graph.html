@@ -15,6 +15,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -24,6 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link rel="stylesheet" href="../dist/css/graph.css">
     <link rel="stylesheet" href="../dist/css/fancySelect.css">
+    <link rel="stylesheet" href="../dist/css/jquery.mloading.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!-- Google Font -->
@@ -258,7 +261,10 @@ desired effect
                     <option value="system" selected="selected">system</option>
                     <option value="sock-shop">sock-shop</option>
                 </select>
-                <button type="button" class="btn btn-white-self btn-primary disabled" data-toggle="modal" data-target="#modal-metrics" id="btn-show" disabled="disabled">查看应用指标</button>
+                <div class="div-btn-container">
+                    <button type="button" class="btn btn-white-self btn-primary disabled" data-toggle="modal" data-target="#modal-metrics" id="btn-show" disabled="disabled">查看应用指标</button>
+                    <button type="button" class="btn btn-white-self btn-primary" id="btn-cause-info" style="margin-left: 10px">开始根因推断</button>
+                </div>
             </div>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
@@ -393,14 +399,14 @@ desired effect
                 <div class="modal-body-self">
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#fa-icons" data-toggle="tab">资源总览</a></li>
-                            <li><a href="#glyphicons" data-toggle="tab">性能总览</a></li>
+                            <li class="active"><a href="#modal-tab-resource" data-toggle="tab">资源总览</a></li>
+                            <li><a href="#modal-tab-performance" data-toggle="tab">性能总览</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane active" id="fa-icons">
+                            <div class="tab-pane active" id="modal-tab-resource">
                                 <iframe src="http://172.18.196.96:37489/dashboard/db/sock-shop-resources?from=now-1h&to=now" width="100%" height="700px" frameborder="0"></iframe>
                             </div>
-                            <div class="tab-pane" id="glyphicons">
+                            <div class="tab-pane" id="modal-tab-performance">
                                 <iframe src="http://172.18.196.96:37489/dashboard/db/sock-shop-performance?from=now-1h&to=now" width="100%" height="700px" frameborder="0"></iframe>
                             </div>
                         </div>
@@ -428,6 +434,40 @@ desired effect
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+
+    <div class="modal fade" id="modal-cause-info">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">根因推断结果</h4>
+                </div>
+                <div class="modal-cause-info">
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#modal-tab-result" data-toggle="tab">推断结果</a></li>
+                            <li><a href="#modal-tab-abnormal" data-toggle="tab">异常列表</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="modal-tab-result">
+                                <table id="score-table" class="table table-bordered table-hover" style="width: 100%"></table>
+                                <div id="div-cause-info-graph">
+                                    <h4>得分较高pod响应时间图</h4>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="modal-tab-abnormal">
+                                <table id="abnormal-table" class="table table-bordered table-hover" style="width: 100%"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 </div>
 <!-- ./wrapper -->
 
@@ -437,12 +477,16 @@ desired effect
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
 <script src="../dist/js/jsplumb.js"></script>
 <script src="../dist/js/jsplumbtoolkit.js"></script>
 <script src="../dist/js/dagre.min.js"></script>
 <script src="../dist/js/fancySelect.js"></script>
+<script src="../dist/js/jquery.mloading.js"></script>
 <script src="../dist/js/map-data.js"></script>
 <script src="../dist/js/buildGraph.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

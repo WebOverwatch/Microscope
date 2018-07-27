@@ -90,18 +90,17 @@
 .modal-body-self {
     position: relative;
     padding: 8px;
-    height: 430px;
+    /*height: 800px;*/
 }
 
 .div-title {
-    width: 550px;
+    width: 720px;
 }
 
 .btn-white-self {
     margin-top: 1.5px;
     /*background-color: #3c8dbc;*/
     /*border-color: #367fa9;*/
-    float: right;
     width: 120px;
 }
 
@@ -109,4 +108,51 @@
     width: 400px;
     margin: 80px auto;
     text-align: center;
+}
+
+.div-btn-container {
+    float: right;
+    width: 300px;
+}
+
+.modal-cause-info {
+    height: 665px;
+}
+
+/* dataTables列内容居中 */
+.table>tbody>tr>td{
+    text-align:center;
+}
+
+/* dataTables表头居中 */
+.table>thead:first-child>tr:first-child>th {
+    text-align: center;
+}
+
+#div-cause-info-graph {
+    overflow-y:auto;
+    width:100%;
+    height:400px;
+}
+
+#score-table_info{display: inline-block; margin: 5px 0px}
+#score-table_paginate {
+    position:absolute;
+    right:0;
+    bottom: 1px;
+    display: inline-flex;
+}
+#score-table_wrapper {
+    position:relative
+}
+
+#abnormal-table_info{display: inline-block; margin: 5px 0px}
+#abnormal-table_paginate {
+    position:absolute;
+    right:0;
+    bottom: 1px;
+    display: inline-flex;
+}
+#abnormal-table_wrapper {
+    position:relative
 }

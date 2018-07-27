@@ -1,4 +1,4 @@
-let relation = [], nodes = [], nodesIP = [], tempType = 'pod', tempApp = 'system';
+let relation = [], nodes = [], nodesIP = [], tempType = 'pod', tempApp = 'system', causeInfoClicked = false;
 // Create a new directed graph
 let g;
 
@@ -209,8 +209,8 @@ function drawByJsPlumb(g, links) {
             if (pod_name in performance_map) {
                 $('#modal-pod-performance-body').empty();
                 $('#modal-pod-performance').modal();
-                if ($('#modal-pod-performance').find('.modal-body-self').children().length === 0) {
-                    $('#modal-pod-performance').find('.modal-body-self').append(
+                if ($('#modal-pod-performance-body').children().length === 0) {
+                    $('#modal-pod-performance-body').append(
                         '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
                         '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
                 }
@@ -228,7 +228,7 @@ function drawByJsPlumb(g, links) {
 function getLogTimeRange() {
     let d = new Date(), time = {};
     time.end = d.toISOString();
-    d.setMinutes(d.getMinutes() - 2);
+    d.setSeconds(d.getSeconds() - 10);
     time.start = d.toISOString();
     return time;
 }
@@ -316,4 +316,96 @@ $(document).ready(function () {
     });
 
     $('.options').css('padding', '0');
+
+    $('#score-table').DataTable({
+        data: format_score(),
+        columns: [
+            { "title": "序号", "data": null },
+            { "title": "pod名", "data": "pod" },
+            { "title": "根因推断得分", "data": "score" },
+        ],
+        columnDefs:[
+            { "orderable": false, "targets": [0,1] },
+        ],
+        rowCallback: function( row, data, index ) {
+            $('td:eq(0)', row).html(index+1);
+        },
+        "oLanguage": {
+            "sProcessing": "<img src='/sinco/img/loading.gif' />",
+            "sLengthMenu": "每页显示 _MENU_ 条记录",
+            "sZeroRecords": "对不起，查询不到相关数据！",
+            "sEmptyTable": "表中无数据存在！",
+            "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+            "sInfoFiltered": "数据表中共为 _MAX_ 条记录",
+            "sSearch": "搜索",
+            "oPaginate": {
+                "sFirst": "首页",
+                "sPrevious": "上一页",
+                "sNext": "下一页",
+                "sLast": "末页"
+            }
+        }, //多语言配置
+        "dom" : "tirp",
+        "order": [[ 2, "desc" ]]
+    });
+
+    $('#abnormal-table').DataTable({
+        data: format_abnormal_list(),
+        "bScrollCollapse" : true,
+        iDisplayLength: 15,
+        columns: [
+            { "title": "序号", "data": null },
+            { "title": "pod名", "data": "pod" },
+        ],
+        columnDefs:[
+            { "orderable": false, "targets": [0,1] },
+        ],
+        rowCallback: function( row, data, index ) {
+            $('td:eq(0)', row).html(index+1);
+        },
+        "oLanguage": {
+            "sProcessing": "<img src='/sinco/img/loading.gif' />",
+            "sLengthMenu": "每页显示 _MENU_ 条记录",
+            "sZeroRecords": "对不起，查询不到相关数据！",
+            "sEmptyTable": "表中无数据存在！",
+            "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+            "sInfoFiltered": "数据表中共为 _MAX_ 条记录",
+            "sSearch": "搜索",
+            "oPaginate": {
+                "sFirst": "首页",
+                "sPrevious": "上一页",
+                "sNext": "下一页",
+                "sLast": "末页"
+            }
+        }, //多语言配置
+        "dom" : "tirp",
+    });
+
+
+
+    $('#btn-cause-info').click(function () {
+        $('body').mLoading({
+            text:"加载中...",//加载文字，默认值：
+            html:false,//设置加载内容是否是html格式，默认值是false
+            mask:true//是否显示遮罩效果，默认显示
+        });
+        setTimeout(function () {
+            $('body').mLoading("hide");//隐藏loading组件
+            if (!causeInfoClicked) {
+                causeInfoClicked = true;
+                $('#modal-cause-info').modal();
+                for (let key in cause_info_score) {
+                    console.log(key);
+                    $('#div-cause-info-graph').append(
+                        '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
+                    );
+                }
+            }
+            else {
+                $('#modal-cause-info').modal();
+            }
+        }, 1000);
+
+    });
+
 });
