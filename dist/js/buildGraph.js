@@ -1,6 +1,9 @@
-let relation = [], nodes = [], nodesIP = [], tempType = 'pod', tempApp = 'system', causeInfoClicked = false;
+let relation = [], nodes = [], nodesIP = [], podMetris = {}, tempType = 'pod', tempApp = 'system', causeInfoClicked = false, nsigma = 3, abnormalCount = 10;
 // Create a new directed graph
 let g;
+
+let sum = function(x, y){ return x + y;};　　//求和函数
+let square = function(x){ return x * x;};　　//数组中每个元素求它的平方
 
 function getData() {
     let range = getLogTimeRange();
@@ -228,7 +231,8 @@ function drawByJsPlumb(g, links) {
 function getLogTimeRange() {
     let d = new Date(), time = {};
     time.end = d.toISOString();
-    d.setSeconds(d.getSeconds() - 10);
+    d.setMinutes(d.getMinutes() - 2);
+    // d.setSeconds(d.getSeconds() - 50);
     time.start = d.toISOString();
     return time;
 }
@@ -250,8 +254,8 @@ function createNode(id, ip) {
 
 function refreshData() {
     for (let ip of nodesIP) {
-        let url = tempType === 'pod' ? 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{instance=~"' + ip + ':.*"}[1m])) by (name, le))'
-            : 'http://172.18.196.96:31090/api/v1/query?query=histogram_quantile(0.99, sum(rate(request_duration_seconds_bucket{name="' + ip + '"}[1m])) by (name, le))';
+        let url = tempType === 'pod' ? 'http://172.18.196.96:31090/api/v1/query?query=sum(rate(request_duration_seconds_sum{instance=~"' + ip + ':.*"}[1m])) / sum(rate(request_duration_seconds_count{instance=~"' + ip + ':.*"}[1m]))'
+            : 'http://172.18.196.96:31090/api/v1/query?query=sum(rate(request_duration_seconds_sum{name="' + ip + '"}[1m])) / sum(rate(request_duration_seconds_count{name="' + ip + '"}[1m]))';
         $.ajax({
             dataType: 'json',
             type: "GET",
@@ -264,11 +268,89 @@ function refreshData() {
                         $(id).find('.node-big-font').eq(0).html('NA');
                     }
                     else {
-                        $(id).find('.node-big-font').eq(0).html((data.data.result[0].value[1] * 1000).toFixed(2));
+                        let metrics = data.data.result[0].value[1] * 1000;
+                        $(id).find('.node-big-font').eq(0).html(metrics.toFixed(2));
+                        if (tempApp !== 'system' && tempType === 'pod') {
+                            let history = podMetris[ip];
+
+                            if (history !== undefined) {
+                                let datas = history.datas;
+                                let mean = datas.reduce(sum) / datas.length;
+                                let deviations = datas.map(function (x) {
+                                    return x - mean;
+                                });
+                                let std = Math.sqrt(deviations.map(square).reduce(sum) / (datas.length));
+                                // console.log(ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + history.abnormalTimes);
+                                if (metrics < mean - nsigma * std || metrics > mean + nsigma * std) {
+                                    if (history.abnormalTimes + 1 < abnormalCount) {
+                                        history.abnormalTimes += 1;
+                                        console.log(ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + history.abnormalTimes);
+                                    }
+                                    else {
+                                        // history.abnormalTimes += 1;
+                                        console.log('red: ' + ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + history.abnormalTimes);
+                                        $(id).css('background-color', '#FF2055');
+                                        $(id).css('color', '#ebebeb');
+                                    }
+                                }
+                                else {
+                                    history.abnormalTimes = 0;
+                                    if ($(id).css('background-color') === 'rgb(255, 32, 85)') {
+                                        // console.log(ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + $(id).css('background-color'));
+                                        $(id).css('background-color', '#FFFFFF');
+                                        $(id).css('color', '#444');
+                                    }
+                                    datas.splice(0, 1);
+                                    datas.push(metrics);
+                                }
+                            }
+                        }
                     }
                 }
             }
         });
+    }
+}
+
+function getLatancy() {
+    // console.log('getLatancy');
+    if (tempType === 'pod') {
+        podMetris = {};
+        for (let ip of nodesIP) {
+            let d = new Date();
+            let end = d.getTime();
+            d.setMinutes(d.getMinutes() - 10);
+            let url = 'http://172.18.196.100:31090/api/v1/query_range?query=sum(rate(request_duration_seconds_sum%7Binstance=~"' + ip
+                + ':.*"%7D[1m]))/sum(rate(request_duration_seconds_count%7Binstance=~"' + ip + ':.*"%7D[1m]))&start=' + d.getTime()/1000 + '&end=' + end/1000 +
+                '&step=1s';
+
+            $.ajax({
+                dataType: 'json',
+                type: "GET",
+                cache: 'false',
+                url: url,
+                // async: false,
+                success: function (data) {
+                    if (data.status === 'success' && data.data.result.length !== 0) {
+                        // console.log(ip + ": " + pod_map[ip]);
+                        let datas = [];
+                        for (let item of data.data.result[0].values) {
+                            datas.push(item[1] * 1000)
+                        }
+                        let metrics = {};
+                        metrics.datas = datas;
+                        metrics.abnormalTimes = 0;
+                        // let statistic = {};
+                        // statistic.mean = datas.reduce(sum)/datas.length;
+                        // statistic.len = datas.length;
+                        // let deviations = datas.map(function(x) { return x - statistic.mean; });
+                        // statistic.variance = deviations.map(square).reduce(sum)/(statistic.len);
+                        podMetris[ip] = metrics;
+                    }
+                }
+            });
+        }
+        // console.log(JSON.stringify(podMetris));
     }
 }
 
@@ -284,6 +366,7 @@ $(document).ready(function () {
     $('#stop-btn').click(function () {
         clearInterval(refreshDataInterval);
     });
+
     $('.node').hover(function () {
         let value = $(this).find('.node-auto-hidden-font').text();
         $(this).attr('title',value);
@@ -296,8 +379,10 @@ $(document).ready(function () {
             tempApp = app;
             if (tempApp === 'system')
                 $('#btn-show').addClass('disabled').attr('disabled', 'disabled');
-            else
+            else {
+                getLatancy();
                 $('#btn-show').removeClass('disabled').removeAttr('disabled');
+            }
             getData();
             $('#canvas').empty();
             drawByJsPlumb(g, relation);
