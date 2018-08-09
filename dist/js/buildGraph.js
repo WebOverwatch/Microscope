@@ -15,6 +15,7 @@ function getData() {
                 "@timestamp": {
                     "lte": range.end,
                     "gte": range.start,
+                    "time_zone": "+08:00"
                 }
             }
         }
@@ -22,7 +23,7 @@ function getData() {
 
     $.ajax({
         type: "POST",
-        url: "http://172.18.196.96:9200/filebeat-6.2.3-*/doc/_search?filter_path=hits.hits._source.message",
+        url: "http://172.18.196.1:9200/filebeat-6.3.2-*/doc/_search?filter_path=hits.hits._source.message",
         dataType: "json",
         async: false,
         cache: 'false',
@@ -50,7 +51,10 @@ function getData() {
                     (tempApp === 'system' && temp[1] !== undefined && temp[1].startsWith('k8s'))) {
                     // 存储关系
                     let trans = temp[3].split('->');
+                    if (trans[1] === undefined)
+                        continue;
                     let source = trans[0].split(':')[0], target = trans[1].split(':')[0];
+                    // console.log(source + ": " + target);
 
                     if (source === '172.20.1.164')
                         continue;
@@ -208,14 +212,14 @@ function drawByJsPlumb(g, links) {
     if (tempType === 'pod') {
         $('.node').dblclick(function () {
             let pod_name = $(this).find('.node-auto-hidden-font').eq(0).text();
-            console.log(pod_name + ': ' + (pod_name in performance_map));
+            // console.log(pod_name + ': ' + (pod_name in performance_map));
             if (pod_name in performance_map) {
                 $('#modal-pod-performance-body').empty();
                 $('#modal-pod-performance').modal();
                 if ($('#modal-pod-performance-body').children().length === 0) {
                     $('#modal-pod-performance-body').append(
-                        '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
-                        '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
+                        '<iframe src="http://172.18.196.1:39629/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
+                        '<iframe src="http://172.18.196.1:39629/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
                 }
             }
             else {
@@ -254,8 +258,8 @@ function createNode(id, ip) {
 
 function refreshData() {
     for (let ip of nodesIP) {
-        let url = tempType === 'pod' ? 'http://172.18.196.96:31090/api/v1/query?query=sum(rate(request_duration_seconds_sum{instance=~"' + ip + ':.*"}[1m])) / sum(rate(request_duration_seconds_count{instance=~"' + ip + ':.*"}[1m]))'
-            : 'http://172.18.196.96:31090/api/v1/query?query=sum(rate(request_duration_seconds_sum{name="' + ip + '"}[1m])) / sum(rate(request_duration_seconds_count{name="' + ip + '"}[1m]))';
+        let url = tempType === 'pod' ? 'http://172.18.196.1:31090/api/v1/query?query=sum(rate(request_duration_seconds_sum{instance=~"' + ip + ':.*"}[1m])) / sum(rate(request_duration_seconds_count{instance=~"' + ip + ':.*"}[1m]))'
+            : 'http://172.18.196.1:31090/api/v1/query?query=sum(rate(request_duration_seconds_sum{name="' + ip + '"}[1m])) / sum(rate(request_duration_seconds_count{name="' + ip + '"}[1m]))';
         $.ajax({
             dataType: 'json',
             type: "GET",
@@ -284,7 +288,7 @@ function refreshData() {
                                 if (metrics < mean - nsigma * std || metrics > mean + nsigma * std) {
                                     if (history.abnormalTimes + 1 < abnormalCount) {
                                         history.abnormalTimes += 1;
-                                        console.log(ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + history.abnormalTimes);
+                                        // console.log(ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + history.abnormalTimes);
                                     }
                                     else {
                                         // history.abnormalTimes += 1;
@@ -296,7 +300,7 @@ function refreshData() {
                                 else {
                                     history.abnormalTimes = 0;
                                     if ($(id).css('background-color') === 'rgb(255, 32, 85)') {
-                                        // console.log(ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + $(id).css('background-color'));
+                                        console.log(ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + $(id).css('background-color'));
                                         $(id).css('background-color', '#FFFFFF');
                                         $(id).css('color', '#444');
                                     }
@@ -320,7 +324,7 @@ function getLatancy() {
             let d = new Date();
             let end = d.getTime();
             d.setMinutes(d.getMinutes() - 10);
-            let url = 'http://172.18.196.100:31090/api/v1/query_range?query=sum(rate(request_duration_seconds_sum%7Binstance=~"' + ip
+            let url = 'http://172.18.196.1:31090/api/v1/query_range?query=sum(rate(request_duration_seconds_sum%7Binstance=~"' + ip
                 + ':.*"%7D[1m]))/sum(rate(request_duration_seconds_count%7Binstance=~"' + ip + ':.*"%7D[1m]))&start=' + d.getTime()/1000 + '&end=' + end/1000 +
                 '&step=1s';
 
@@ -416,7 +420,6 @@ $(document).ready(function () {
             $('td:eq(0)', row).html(index+1);
         },
         "oLanguage": {
-            "sProcessing": "<img src='/sinco/img/loading.gif' />",
             "sLengthMenu": "每页显示 _MENU_ 条记录",
             "sZeroRecords": "对不起，查询不到相关数据！",
             "sEmptyTable": "表中无数据存在！",
@@ -449,7 +452,6 @@ $(document).ready(function () {
             $('td:eq(0)', row).html(index+1);
         },
         "oLanguage": {
-            "sProcessing": "<img src='/sinco/img/loading.gif' />",
             "sLengthMenu": "每页显示 _MENU_ 条记录",
             "sZeroRecords": "对不起，查询不到相关数据！",
             "sEmptyTable": "表中无数据存在！",
@@ -480,9 +482,9 @@ $(document).ready(function () {
                 causeInfoClicked = true;
                 $('#modal-cause-info').modal();
                 for (let key in cause_info_score) {
-                    console.log(key);
+                    // console.log(key);
                     $('#div-cause-info-graph').append(
-                        '<iframe src="http://172.18.196.96:37489/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
+                        '<iframe src="http://172.18.196.1:39629/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
                     );
                 }
             }
