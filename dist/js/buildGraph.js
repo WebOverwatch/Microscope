@@ -218,8 +218,8 @@ function drawByJsPlumb(g, links) {
                 $('#modal-pod-performance').modal();
                 if ($('#modal-pod-performance-body').children().length === 0) {
                     $('#modal-pod-performance-body').append(
-                        '<iframe src="http://172.18.196.1:39629/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
-                        '<iframe src="http://172.18.196.1:39629/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
+                        '<iframe src="http://172.18.196.1:22385/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
+                        '<iframe src="http://172.18.196.1:22385/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
                 }
             }
             else {
@@ -484,7 +484,7 @@ $(document).ready(function () {
                 for (let key in cause_info_score) {
                     // console.log(key);
                     $('#div-cause-info-graph').append(
-                        '<iframe src="http://172.18.196.1:39629/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
+                        '<iframe src="http://172.18.196.1:22385/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
                     );
                 }
             }
