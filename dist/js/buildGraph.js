@@ -6,7 +6,13 @@ let sum = function(x, y){ return x + y;};　　//求和函数
 let square = function(x){ return x * x;};　　//数组中每个元素求它的平方
 
 function getData() {
-    let range = getLogTimeRange();
+    // let range = getLogTimeRange();
+    // console.log(range.start + ', ' + range.end);
+    // 使用固定时间进行测试
+    let range = {
+        start: '2018-08-31T03:15:04.683Z',
+        end: '2018-08-31T03:20:04.683Z',
+    };
     let data = {
         "from": 0,
         "size": 8000,
@@ -49,7 +55,9 @@ function getData() {
                 // 过滤掉不是该应用的数据
                 if ((tempApp === 'sock-shop' && temp[1] !== undefined && temp[1].search('sock-shop') !== -1) ||
                     (tempApp === 'system' && temp[1] !== undefined && temp[1].startsWith('k8s'))) {
-                    // 存储关系
+
+                    if (temp[3] === undefined)
+                        continue;
                     let trans = temp[3].split('->');
                     if (trans[1] === undefined)
                         continue;
@@ -58,6 +66,7 @@ function getData() {
 
                     if (source === '172.20.1.164')
                         continue;
+                    // 存储关系
                     if (source in pod_map && target in pod_map) {
                         if (tempType === 'pod') {
                             source = 'n' + source.replace(/\./g, "-");
@@ -109,12 +118,10 @@ function getData() {
                                     relation[source].push(target);
                                 }
                             }
-                        }
-
+                        } // else if
                         // $('#main').append('<p>' + line + '</p>');
                     }
-
-                }
+                } // if
             }
 
             console.log(nodesIP);
@@ -218,8 +225,8 @@ function drawByJsPlumb(g, links) {
                 $('#modal-pod-performance').modal();
                 if ($('#modal-pod-performance-body').children().length === 0) {
                     $('#modal-pod-performance-body').append(
-                        '<iframe src="http://172.18.196.1:22385/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
-                        '<iframe src="http://172.18.196.1:22385/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
+                        '<iframe src="http://172.18.196.1:29686/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
+                        '<iframe src="http://172.18.196.1:29686/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
                 }
             }
             else {
@@ -230,12 +237,13 @@ function drawByJsPlumb(g, links) {
             }
         });
     }
+
 }
 
 function getLogTimeRange() {
     let d = new Date(), time = {};
     time.end = d.toISOString();
-    d.setMinutes(d.getMinutes() - 2);
+    d.setMinutes(d.getMinutes() - 5);
     // d.setSeconds(d.getSeconds() - 50);
     time.start = d.toISOString();
     return time;
@@ -292,7 +300,7 @@ function refreshData() {
                                     }
                                     else {
                                         // history.abnormalTimes += 1;
-                                        console.log('red: ' + ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + history.abnormalTimes);
+                                        // console.log('red: ' + ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + history.abnormalTimes);
                                         $(id).css('background-color', '#FF2055');
                                         $(id).css('color', '#ebebeb');
                                     }
@@ -300,7 +308,7 @@ function refreshData() {
                                 else {
                                     history.abnormalTimes = 0;
                                     if ($(id).css('background-color') === 'rgb(255, 32, 85)') {
-                                        console.log(ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + $(id).css('background-color'));
+                                        // console.log(ip + ", " + (mean - nsigma * std) + ", " + (mean + nsigma * std) + ", " + metrics + ", " + $(id).css('background-color'));
                                         $(id).css('background-color', '#FFFFFF');
                                         $(id).css('color', '#444');
                                     }
@@ -323,7 +331,7 @@ function getLatancy() {
         for (let ip of nodesIP) {
             let d = new Date();
             let end = d.getTime();
-            d.setMinutes(d.getMinutes() - 10);
+            d.setMinutes(d.getMinutes() - 2);
             let url = 'http://172.18.196.1:31090/api/v1/query_range?query=sum(rate(request_duration_seconds_sum%7Binstance=~"' + ip
                 + ':.*"%7D[1m]))/sum(rate(request_duration_seconds_count%7Binstance=~"' + ip + ':.*"%7D[1m]))&start=' + d.getTime()/1000 + '&end=' + end/1000 +
                 '&step=1s';
@@ -364,12 +372,10 @@ $(document).ready(function () {
     jsPlumb.ready(function () {
         drawByJsPlumb(g, relation);
     });
+    // 移除遮罩
+    $('body').mLoading("hide");//隐藏loading组件
     refreshData();
     let refreshDataInterval = setInterval('refreshData()', 3000);
-
-    $('#stop-btn').click(function () {
-        clearInterval(refreshDataInterval);
-    });
 
     $('.node').hover(function () {
         let value = $(this).find('.node-auto-hidden-font').text();
@@ -387,9 +393,16 @@ $(document).ready(function () {
                 getLatancy();
                 $('#btn-show').removeClass('disabled').removeAttr('disabled');
             }
+            $('body').mLoading({
+                text:"加载中...",//加载文字，默认值：
+                html:false,//设置加载内容是否是html格式，默认值是false
+                mask:true//是否显示遮罩效果，默认显示
+            });
             getData();
             $('#canvas').empty();
             drawByJsPlumb(g, relation);
+            // 移除遮罩
+            $('body').mLoading("hide");//隐藏loading组件
         }
     });
     $('#type-select').fancySelect().on('change.fs', function () {
@@ -469,8 +482,22 @@ $(document).ready(function () {
     });
 
 
-
     $('#btn-cause-info').click(function () {
+        let candidates = [], trigger_pod = [];
+        $('#canvas').find("div").each(function () {
+            if ($(this).css('background-color') === 'rgb(255, 32, 85)') {
+                let temp = {};
+                let pod_name = $(this).find('p:eq(0)').html();
+                temp.pod = pod_name;
+                temp.ip = $(this).find('.node-medium-font:eq(0)').html();
+                candidates.push(temp);
+                // 由front-end触发RCA算法
+                if (pod_name.indexOf('front-end') > 0)
+                    istrigger.push(pod_name);
+            }
+            console.log(JSON.stringify(candidates));
+            console.log(istrigger);
+        });
         $('body').mLoading({
             text:"加载中...",//加载文字，默认值：
             html:false,//设置加载内容是否是html格式，默认值是false
@@ -484,7 +511,7 @@ $(document).ready(function () {
                 for (let key in cause_info_score) {
                     // console.log(key);
                     $('#div-cause-info-graph').append(
-                        '<iframe src="http://172.18.196.1:22385/dashboard-solo/db/sock-shop?from=now-1h&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
+                        '<iframe src="http://172.18.196.1:29686/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
                     );
                 }
             }

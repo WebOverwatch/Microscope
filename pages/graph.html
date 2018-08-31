@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Starter</title>
+    <title>Microscope-Graph</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -29,9 +29,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../dist/css/jquery.mloading.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!-- Google Font -->
+    <!-- Google Font
     <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">  -->
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -64,7 +64,7 @@ desired effect
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>Mirco</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Mircoscope</b></span>
+            <span class="logo-lg"><b>Microscope</b></span>
         </a>
 
         <!-- Header Navbar -->
@@ -229,7 +229,6 @@ desired effect
                 <!-- Optionally, you can add icons to the links -->
                 <li><a href="../starter%20-%20ljj.html"><i class="fa fa-dashboard"></i> <span>系统监控状态总览</span></a></li>
                 <li class="active"><a href="#"><i class="fa fa-th"></i> <span>程序异常诊断</span></a></li>
-                <li><a href="#alert"><i class="fa fa-bell-o"></i> <span>程序告警设置</span></a></li>
 
                 <!-- <li class="treeview">
                   <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
@@ -279,7 +278,6 @@ desired effect
             <div class="row">
                 <div class="box-header with-border">
                     <div class="graph-canvas" id="canvas"></div>
-                    <button class="fc-button" id="stop-btn">停止刷新</button>
                 </div>
             </div>
             <!-- /.row -->
@@ -404,10 +402,10 @@ desired effect
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="modal-tab-resource">
-                                <iframe src="http://172.18.196.1:22385/dashboard/db/sock-shop-resources?from=now-1h&to=now" width="100%" height="700px" frameborder="0"></iframe>
+                                <iframe src="http://172.18.196.1:29686/dashboard/db/sock-shop-resources?from=now-1h&to=now" width="100%" height="700px" frameborder="0"></iframe>
                             </div>
                             <div class="tab-pane" id="modal-tab-performance">
-                                <iframe src="http://172.18.196.1:22385/dashboard/db/sock-shop-performance?from=now-1h&to=now" width="100%" height="700px" frameborder="0"></iframe>
+                                <iframe src="http://172.18.196.1:29686/dashboard/db/sock-shop-performance?from=now-1h&to=now" width="100%" height="700px" frameborder="0"></iframe>
                             </div>
                         </div>
                     </div>
@@ -475,6 +473,16 @@ desired effect
 
 <!-- jQuery 3 -->
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery mLoading -->
+<script src="../dist/js/jquery.mloading.js"></script>
+<!-- mask -->
+<script>
+    $('body').mLoading({
+        text:"加载中...",//加载文字，默认值：
+        html:false,//设置加载内容是否是html格式，默认值是false
+        mask:true//是否显示遮罩效果，默认显示
+    });
+</script>
 <!-- Bootstrap 3.3.7 -->
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- DataTables -->
@@ -486,7 +494,7 @@ desired effect
 <script src="../dist/js/jsplumbtoolkit.js"></script>
 <script src="../dist/js/dagre.min.js"></script>
 <script src="../dist/js/fancySelect.js"></script>
-<script src="../dist/js/jquery.mloading.js"></script>
+
 <script src="../dist/js/map-data.js"></script>
 <script src="../dist/js/buildGraph.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
