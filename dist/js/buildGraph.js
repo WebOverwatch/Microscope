@@ -483,6 +483,11 @@ $(document).ready(function () {
 
 
     $('#btn-cause-info').click(function () {
+		$('body').mLoading({
+			text:"加载中...",//加载文字，默认值：
+			html:false,//设置加载内容是否是html格式，默认值是false
+			mask:true//是否显示遮罩效果，默认显示
+		});
         // candiates: {ip: {ip, pod_name}, ...}
         // trigger_pod: [ip, ...]
         let candidates = {}, trigger_pod = [];
@@ -509,17 +514,20 @@ $(document).ready(function () {
         else {
             let corr_matrix = [], pod_ip = [];
             for (root_ip of trigger_pod) {
-                corr_matrix.push(podMetris[root_ip]);
+                corr_matrix.push(podMetris[root_ip].datas);
                 pod_ip.push(root_ip);
                 for (ip in candidates) {
                     // 寻找与front-end关联的异常节点
                     let id = 'n' + ip.replace(/\./g, "-"), root_id = 'n' + root_ip.replace(/\./g, "-");
-                    console.log(relation[root_id] + ', ' + id);
                     if (relation[root_id].indexOf(id) !== -1) {
-                        corr_matrix.push(podMetris[ip]);
-                        pod_ip.push(ip);
+                        // 将未加入的节点加入
+                        if (pod_ip.indexOf(ip) !== -1) {
+							corr_matrix.push(podMetris[ip].datas);
+							pod_ip.push(ip);
+                        }
                     }
                 }
+				console.log(root_ip + ', ' + pod_ip);
             }
             if (trigger_pod.length === corr_matrix.length) {
                 // 两个list长度一样，没有找到关联的异常节点
@@ -533,28 +541,21 @@ $(document).ready(function () {
                 console.log(score);
             }
         }
-        $('body').mLoading({
-            text:"加载中...",//加载文字，默认值：
-            html:false,//设置加载内容是否是html格式，默认值是false
-            mask:true//是否显示遮罩效果，默认显示
-        });
-        setTimeout(function () {
-            $('body').mLoading("hide");//隐藏loading组件
-            if (!causeInfoClicked) {
-                causeInfoClicked = true;
-                $('#modal-cause-info').modal();
-                for (let key in cause_info_score) {
-                    // console.log(key);
-                    $('#div-cause-info-graph').append(
-                        '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
-                    );
-                }
-            }
-            else {
-                $('#modal-cause-info').modal();
-            }
-        }, 1000);
 
+        $('body').mLoading("hide");//隐藏loading组件
+        if (!causeInfoClicked) {
+            causeInfoClicked = true;
+            $('#modal-cause-info').modal();
+            for (let key in cause_info_score) {
+                // console.log(key);
+                $('#div-cause-info-graph').append(
+                    '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
+                );
+            }
+        }
+        else {
+            $('#modal-cause-info').modal();
+        }
     });
 
 });
