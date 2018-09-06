@@ -10,8 +10,8 @@ function getData() {
     // console.log(range.start + ', ' + range.end);
     // 使用固定时间进行测试
     let range = {
-        start: '2018-08-31T03:15:04.683Z',
-        end: '2018-08-31T03:20:04.683Z',
+        start: '2018-09-06T04:31:17.313Z',
+        end: '2018-09-06T04:36:17.313Z',
     };
     let data = {
         "from": 0,
@@ -225,8 +225,8 @@ function drawByJsPlumb(g, links) {
                 $('#modal-pod-performance').modal();
                 if ($('#modal-pod-performance-body').children().length === 0) {
                     $('#modal-pod-performance-body').append(
-                        '<iframe src="http://172.18.196.1:29686/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
-                        '<iframe src="http://172.18.196.1:29686/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
+                        '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
+                        '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
                 }
             }
             else {
@@ -483,21 +483,56 @@ $(document).ready(function () {
 
 
     $('#btn-cause-info').click(function () {
-        let candidates = [], trigger_pod = [];
+        // candiates: {ip: {ip, pod_name}, ...}
+        // trigger_pod: [ip, ...]
+        let candidates = {}, trigger_pod = [];
         $('#canvas').find("div").each(function () {
             if ($(this).css('background-color') === 'rgb(255, 32, 85)') {
                 let temp = {};
-                let pod_name = $(this).find('p:eq(0)').html();
+                let pod_name = $(this).find('p:eq(0)').html(), ip = $(this).find('.node-medium-font:eq(0)').html();
                 temp.pod = pod_name;
-                temp.ip = $(this).find('.node-medium-font:eq(0)').html();
-                candidates.push(temp);
+                temp.ip = ip;
                 // 由front-end触发RCA算法
-                if (pod_name.indexOf('front-end') > 0)
-                    istrigger.push(pod_name);
+                if (pod_name.indexOf('front-end') >= 0) {
+                    trigger_pod.push(ip);
+                }
+                else {
+                    candidates[ip] = temp;
+                }
             }
-            console.log(JSON.stringify(candidates));
-            console.log(istrigger);
         });
+        console.log(JSON.stringify(candidates));
+        if (trigger_pod.length === 0) {
+            // 没有front-end异常，未触发RCA
+            console.log("没有front-end异常，未触发RCA");
+        }
+        else {
+            let corr_matrix = [], pod_ip = [];
+            for (root_ip of trigger_pod) {
+                corr_matrix.push(podMetris[root_ip]);
+                pod_ip.push(root_ip);
+                for (ip in candidates) {
+                    // 寻找与front-end关联的异常节点
+                    let id = 'n' + ip.replace(/\./g, "-"), root_id = 'n' + root_ip.replace(/\./g, "-");
+                    console.log(relation[root_id] + ', ' + id);
+                    if (relation[root_id].indexOf(id) !== -1) {
+                        corr_matrix.push(podMetris[ip]);
+                        pod_ip.push(ip);
+                    }
+                }
+            }
+            if (trigger_pod.length === corr_matrix.length) {
+                // 两个list长度一样，没有找到关联的异常节点
+                console.log("没有找到关联的异常节点，未触发RCA");
+            }
+            else {
+                // 计算score
+                score = pcorr(corr_matrix);
+                console.log(pod_ip);
+                console.log(corr_matrix);
+                console.log(score);
+            }
+        }
         $('body').mLoading({
             text:"加载中...",//加载文字，默认值：
             html:false,//设置加载内容是否是html格式，默认值是false
@@ -511,7 +546,7 @@ $(document).ready(function () {
                 for (let key in cause_info_score) {
                     // console.log(key);
                     $('#div-cause-info-graph').append(
-                        '<iframe src="http://172.18.196.1:29686/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
+                        '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
                     );
                 }
             }
