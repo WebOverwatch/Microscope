@@ -1,3 +1,4 @@
+const STR_FRONT_END = 'front-end';
 let relation = [], nodes = [], nodesIP = [], podMetris = {}, tempType = 'pod', tempApp = 'system', causeInfoClicked = false, nsigma = 3, abnormalCount = 10;
 // Create a new directed graph
 let g;
@@ -498,7 +499,7 @@ $(document).ready(function () {
                 temp.pod = pod_name;
                 temp.ip = ip;
                 // 由front-end触发RCA算法
-                if (pod_name.indexOf('front-end') >= 0) {
+                if (pod_name.indexOf(STR_FRONT_END) >= 0) {
                     trigger_pod.push(ip);
                 }
                 else {
@@ -512,46 +513,96 @@ $(document).ready(function () {
             console.log("没有front-end异常，未触发RCA");
         }
         else {
-            let corr_matrix = [], pod_ip = [];
+            let corr_matrix = [], pod_ip = [], candidates_len = 0;
             for (root_ip of trigger_pod) {
-                corr_matrix.push(podMetris[root_ip].datas);
+                // corr_matrix.push(podMetris[root_ip].datas);
                 pod_ip.push(root_ip);
                 for (ip in candidates) {
                     // 寻找与front-end关联的异常节点
                     let id = 'n' + ip.replace(/\./g, "-"), root_id = 'n' + root_ip.replace(/\./g, "-");
                     if (relation[root_id].indexOf(id) !== -1) {
                         // 将未加入的节点加入
-                        if (pod_ip.indexOf(ip) !== -1) {
-							corr_matrix.push(podMetris[ip].datas);
+                        if (pod_ip.indexOf(ip) === -1) {
+							// corr_matrix.push(podMetris[ip].datas);
 							pod_ip.push(ip);
                         }
                     }
+                    candidates_len ++;
                 }
 				console.log(root_ip + ', ' + pod_ip);
             }
-            if (trigger_pod.length === corr_matrix.length) {
+            if (trigger_pod.length === pod_ip.length) {
                 // 两个list长度一样，没有找到关联的异常节点
                 console.log("没有找到关联的异常节点，未触发RCA");
             }
             else {
                 // 计算score
+                let d = new Date();
+                let end = d.getTime();
+                d.setMinutes(d.getMinutes() - 2);
+                for (let ip of pod_ip) {
+                    let url = 'http://172.18.196.1:31090/api/v1/query_range?query=sum(rate(request_duration_seconds_sum%7Binstance=~"' + ip
+                        + ':.*"%7D[1m]))/sum(rate(request_duration_seconds_count%7Binstance=~"' + ip + ':.*"%7D[1m]))&start=' + d.getTime()/1000 + '&end=' + end/1000 +
+                        '&step=1s';
+
+                    $.ajax({
+                        dataType: 'json',
+                        type: "GET",
+                        cache: 'false',
+                        url: url,
+                        async: false,
+                        success: function (data) {
+                            if (data.status === 'success' && data.data.result.length !== 0) {
+                                // console.log(ip + ": " + pod_map[ip]);
+                                let datas = [];
+                                for (let item of data.data.result[0].values) {
+                                    datas.push(item[1] * 1000)
+                                }
+                                corr_matrix.push(datas);
+                            }
+                        }
+                    });
+                }
                 score = pcorr(corr_matrix);
                 console.log(pod_ip);
-                console.log(corr_matrix);
+                // console.log(corr_matrix);
                 console.log(score);
-            }
-        }
+                pod_score = {};
+                // 取出异常pod的得分
+                for (root_ip of trigger_pod) {
+                    for (let i = 0; i < pod_ip.length; i++) {
+                        if (pod_map[pod_ip[i]].indexOf(STR_FRONT_END) === -1) {
+                            // 取出非front-end成绩
+                            if (pod_score[name] === undefined) {
+                                // 存储pod成绩
+                                let pod_score = {
+                                    name: pod_map[pod_ip[i]],
+                                    score: score[pod_ip.indexOf(root_ip)][i],
+                                };
+                                pod_score[name] = pod_score;
+                                console.log(root_ip + ', ' + i + ': ' + score[pod_ip.indexOf(root_ip)][i] + ', ' + pod_score[name]);
+                            }
+                            else if (pod_score[name].score < score[pod_ip.indexOf(root_ip)][i]) {
+                                // 更新pod成绩
+                                pod_score[name].score = score[pod_ip.indexOf(root_ip)][i];
+                            }
+                        } // if
+                    } // for (i)
+                } // for (root_ip)
+                console.log(pod_score);
+            } // else
+        } // else
 
         $('body').mLoading("hide");//隐藏loading组件
         if (!causeInfoClicked) {
             causeInfoClicked = true;
             $('#modal-cause-info').modal();
-            for (let key in cause_info_score) {
-                // console.log(key);
-                $('#div-cause-info-graph').append(
-                    '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
-                );
-            }
+            // for (let key in cause_info_score) {
+            //     // console.log(key);
+            //     $('#div-cause-info-graph').append(
+            //         '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
+            //     );
+            // }
         }
         else {
             $('#modal-cause-info').modal();
