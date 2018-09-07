@@ -1,5 +1,6 @@
 const STR_FRONT_END = 'front-end';
-let relation = [], nodes = [], nodesIP = [], podMetris = {}, tempType = 'pod', tempApp = 'system', causeInfoClicked = false, nsigma = 3, abnormalCount = 10;
+let score_table, abnormal_table;
+let relation = [], nodes = [], nodesIP = [], podMetris = {}, tempType = 'pod', tempApp = 'system', nsigma = 3, abnormalCount = 10;
 // Create a new directed graph
 let g;
 
@@ -231,9 +232,9 @@ function drawByJsPlumb(g, links) {
                 }
             }
             else {
-                $('#modal-pod-performance-body').empty().append('<div class="div-no-data"><img src="../dist/img/error.png"></img><h3><i class="fa fa-warning text-yellow"></i> Oops! Not data for this pod.</h3>' +
-                    '<p>We could not find the performace data you were looking for.' +
-                    'Meanwhile, you may <a href="#" data-dismiss="modal">return to page</a> or try other function.</p></div>');
+                $('#modal-pod-performance-body').empty().append('<div class="div-no-data"><img src="../dist/img/error.png"></img><h3><i class="fa fa-warning text-yellow"></i> Oops! 该pod的数据迷路了</h3>' +
+                    '<p>系统找不到该pod的性能数据了，<br/>' +
+                    '您可以 <a href="#" data-dismiss="modal">返回页面</a> 或尝试其它功能</p></div>');
                 $('#modal-pod-performance').modal();
             }
         });
@@ -367,6 +368,88 @@ function getLatancy() {
     }
 }
 
+function show_pod_latency(pod) {
+    $('#modal-cause-info-result').find('h4:eq(0)').html(pod + '时延');
+    $('#modal-cause-info-result-body').empty().append(
+        '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
+    )
+    $('#modal-cause-info-result').modal();
+}
+
+function init_root_cause_table(triggered) {
+    if (triggered) {
+        if (score_table !== undefined)
+            score_table.destroy();
+        score_table = $('#score-table').DataTable({
+            data: format_score(),
+            columns: [
+                { "title": "序号", "data": null },
+                { "title": "pod名", "data": "pod" },
+                { "title": "根因推断得分", "data": "score" },
+                { "title": "操作", "data": null },
+            ],
+            columnDefs:[
+                { "orderable": false, "targets": [0,1] },
+            ],
+            rowCallback: function( row, data, index ) {
+                $('td:eq(0)', row).html(index+1);
+                $('td:eq(3)', row).html('<button type="button" class="btn btn-primary btn-show-chart" onclick="show_pod_latency(\'' + data.pod + '\')"><i class="fa fa-area-chart small-icon"></i></button>');
+            },
+            "oLanguage": {
+                "sLengthMenu": "每页显示 _MENU_ 条记录",
+                "sZeroRecords": "对不起，查询不到相关数据！",
+                "sEmptyTable": "表中无数据存在！",
+                "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+                "sInfoFiltered": "数据表中共为 _MAX_ 条记录",
+                "sSearch": "搜索",
+                "oPaginate": {
+                    "sFirst": "首页",
+                    "sPrevious": "上一页",
+                    "sNext": "下一页",
+                    "sLast": "末页"
+                }
+            }, //多语言配置
+            "dom" : "tirp",
+            "order": [[ 2, "desc" ]]
+        });
+    }
+
+    if (abnormal_table !== undefined)
+        abnormal_table.destroy();
+    abnormal_table = $('#abnormal-table').DataTable({
+        data: format_abnormal_list(),
+        "bScrollCollapse" : true,
+        iDisplayLength: 15,
+        columns: [
+            { "title": "序号", "data": null },
+            { "title": "pod名", "data": "pod" },
+            { "title": "操作", "data": null },
+        ],
+        columnDefs:[
+            { "orderable": false, "targets": [0,1] },
+        ],
+        rowCallback: function( row, data, index ) {
+            $('td:eq(0)', row).html(index+1);
+            $('td:eq(2)', row).html('<button type="button" class="btn btn-primary btn-show-chart" onclick="show_pod_latency(\'' + data.pod + '\')"><i class="fa fa-area-chart small-icon"></i></button>');
+        },
+        "oLanguage": {
+            "sLengthMenu": "每页显示 _MENU_ 条记录",
+            "sZeroRecords": "对不起，查询不到相关数据！",
+            "sEmptyTable": "表中无数据存在！",
+            "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+            "sInfoFiltered": "数据表中共为 _MAX_ 条记录",
+            "sSearch": "搜索",
+            "oPaginate": {
+                "sFirst": "首页",
+                "sPrevious": "上一页",
+                "sNext": "下一页",
+                "sLast": "末页"
+            }
+        }, //多语言配置
+        "dom" : "tirp",
+    });
+}
+
 $(document).ready(function () {
     getData();
 
@@ -420,69 +503,6 @@ $(document).ready(function () {
 
     $('.options').css('padding', '0');
 
-    $('#score-table').DataTable({
-        data: format_score(),
-        columns: [
-            { "title": "序号", "data": null },
-            { "title": "pod名", "data": "pod" },
-            { "title": "根因推断得分", "data": "score" },
-        ],
-        columnDefs:[
-            { "orderable": false, "targets": [0,1] },
-        ],
-        rowCallback: function( row, data, index ) {
-            $('td:eq(0)', row).html(index+1);
-        },
-        "oLanguage": {
-            "sLengthMenu": "每页显示 _MENU_ 条记录",
-            "sZeroRecords": "对不起，查询不到相关数据！",
-            "sEmptyTable": "表中无数据存在！",
-            "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
-            "sInfoFiltered": "数据表中共为 _MAX_ 条记录",
-            "sSearch": "搜索",
-            "oPaginate": {
-                "sFirst": "首页",
-                "sPrevious": "上一页",
-                "sNext": "下一页",
-                "sLast": "末页"
-            }
-        }, //多语言配置
-        "dom" : "tirp",
-        "order": [[ 2, "desc" ]]
-    });
-
-    $('#abnormal-table').DataTable({
-        data: format_abnormal_list(),
-        "bScrollCollapse" : true,
-        iDisplayLength: 15,
-        columns: [
-            { "title": "序号", "data": null },
-            { "title": "pod名", "data": "pod" },
-        ],
-        columnDefs:[
-            { "orderable": false, "targets": [0,1] },
-        ],
-        rowCallback: function( row, data, index ) {
-            $('td:eq(0)', row).html(index+1);
-        },
-        "oLanguage": {
-            "sLengthMenu": "每页显示 _MENU_ 条记录",
-            "sZeroRecords": "对不起，查询不到相关数据！",
-            "sEmptyTable": "表中无数据存在！",
-            "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
-            "sInfoFiltered": "数据表中共为 _MAX_ 条记录",
-            "sSearch": "搜索",
-            "oPaginate": {
-                "sFirst": "首页",
-                "sPrevious": "上一页",
-                "sNext": "下一页",
-                "sLast": "末页"
-            }
-        }, //多语言配置
-        "dom" : "tirp",
-    });
-
-
     $('#btn-cause-info').click(function () {
 		$('body').mLoading({
 			text:"加载中...",//加载文字，默认值：
@@ -492,6 +512,7 @@ $(document).ready(function () {
         // candiates: {ip: {ip, pod_name}, ...}
         // trigger_pod: [ip, ...]
         let candidates = {}, trigger_pod = [];
+        abnormal_list = [];
         $('#canvas').find("div").each(function () {
             if ($(this).css('background-color') === 'rgb(255, 32, 85)') {
                 let temp = {};
@@ -505,12 +526,19 @@ $(document).ready(function () {
                 else {
                     candidates[ip] = temp;
                 }
+                abnormal_list.push(pod_name);
             }
         });
         console.log(JSON.stringify(candidates));
         if (trigger_pod.length === 0) {
+            // 测试代码
+            abnormal_list.push('front-end-f7454fd74-9vxtl');
             // 没有front-end异常，未触发RCA
             console.log("没有front-end异常，未触发RCA");
+            $('#modal-tab-result').empty().append('<div class="div-no-data"><img src="../dist/img/error.png"></img><h3><i class="fa fa-warning text-yellow"></i> Oops! 根因推断未触发</h3>' +
+                '<p>由于根节点没有异常，根因推断未触发<br>' +
+                '您可以 <a href="#" data-dismiss="modal">返回页面</a> 或尝试其它功能</p></div>');
+            init_root_cause_table(false);
         }
         else {
             let corr_matrix = [], pod_ip = [], candidates_len = 0;
@@ -534,6 +562,10 @@ $(document).ready(function () {
             if (trigger_pod.length === pod_ip.length) {
                 // 两个list长度一样，没有找到关联的异常节点
                 console.log("没有找到关联的异常节点，未触发RCA");
+                $('#modal-tab-result').empty().append('<div class="div-no-data"><img src="../dist/img/error.png"></img><h3><i class="fa fa-warning text-yellow"></i> Oops! 根因推断未触发</h3>' +
+                    '<p>由于只有根节点异常，根因推断未触发<br>' +
+                    '您可以 <a href="#" data-dismiss="modal">返回页面</a> 或尝试其它功能</p></div>');
+                init_root_cause_table(false);
             }
             else {
                 // 计算score
@@ -567,46 +599,33 @@ $(document).ready(function () {
                 console.log(pod_ip);
                 // console.log(corr_matrix);
                 console.log(score);
-                pod_score = {};
+                cause_info_score = {};
                 // 取出异常pod的得分
                 for (root_ip of trigger_pod) {
                     for (let i = 0; i < pod_ip.length; i++) {
+                        let name = pod_map[pod_ip[i]];
                         if (pod_map[pod_ip[i]].indexOf(STR_FRONT_END) === -1) {
                             // 取出非front-end成绩
-                            if (pod_score[name] === undefined) {
+                            if (cause_info_score[name] === undefined) {
                                 // 存储pod成绩
-                                let pod_score = {
-                                    name: pod_map[pod_ip[i]],
-                                    score: score[pod_ip.indexOf(root_ip)][i],
-                                };
-                                pod_score[name] = pod_score;
-                                console.log(root_ip + ', ' + i + ': ' + score[pod_ip.indexOf(root_ip)][i] + ', ' + pod_score[name]);
+                                cause_info_score[name] = score[pod_ip.indexOf(root_ip)][i];
+                                // console.log(root_ip + ', ' + i + ': ' + score[pod_ip.indexOf(root_ip)][i] + ', ' + cause_info_score[name]);
                             }
-                            else if (pod_score[name].score < score[pod_ip.indexOf(root_ip)][i]) {
+                            else if (cause_info_score[name] < score[pod_ip.indexOf(root_ip)][i]) {
                                 // 更新pod成绩
-                                pod_score[name].score = score[pod_ip.indexOf(root_ip)][i];
+                                cause_info_score[name] = score[pod_ip.indexOf(root_ip)][i];
                             }
                         } // if
                     } // for (i)
                 } // for (root_ip)
-                console.log(pod_score);
+                console.log(cause_info_score);
+                $('#modal-tab-result').empty().append('<table id="score-table" class="table table-bordered table-hover" style="width: 100%"></table>');
+                init_root_cause_table(true);
             } // else
         } // else
 
         $('body').mLoading("hide");//隐藏loading组件
-        if (!causeInfoClicked) {
-            causeInfoClicked = true;
-            $('#modal-cause-info').modal();
-            // for (let key in cause_info_score) {
-            //     // console.log(key);
-            //     $('#div-cause-info-graph').append(
-            //         '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[key][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
-            //     );
-            // }
-        }
-        else {
-            $('#modal-cause-info').modal();
-        }
+        $('#modal-cause-info').modal();
     });
 
 });

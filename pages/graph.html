@@ -449,10 +449,7 @@ desired effect
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="modal-tab-result">
-                                <table id="score-table" class="table table-bordered table-hover" style="width: 100%"></table>
-                                <div id="div-cause-info-graph">
-                                    <h4>得分较高pod响应时间图</h4>
-                                </div>
+
                             </div>
                             <div class="tab-pane" id="modal-tab-abnormal">
                                 <table id="abnormal-table" class="table table-bordered table-hover" style="width: 100%"></table>
@@ -460,6 +457,21 @@ desired effect
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <div class="modal fade" id="modal-cause-info-result">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Pod性能</h4>
+                </div>
+                <div class="modal-body-self" id="modal-cause-info-result-body"></div>
             </div>
             <!-- /.modal-content -->
         </div>

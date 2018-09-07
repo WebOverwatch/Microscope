@@ -116,7 +116,7 @@
 }
 
 .modal-cause-info {
-    height: 665px;
+    height: 400px;
 }
 
 /* dataTables列内容居中 */
@@ -133,6 +133,15 @@
     overflow-y:auto;
     width:100%;
     height:400px;
+}
+
+.btn-show-chart {
+    width: 30px;
+    padding: 0px 4px;
+}
+
+.small-icon {
+    font-size: 8px;
 }
 
 #score-table_info{display: inline-block; margin: 5px 0px}
