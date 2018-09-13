@@ -8,16 +8,16 @@ let sum = function(x, y){ return x + y;};　　//求和函数
 let square = function(x){ return x * x;};　　//数组中每个元素求它的平方
 
 function getData() {
-    // let range = getLogTimeRange();
-    // console.log(range.start + ', ' + range.end);
+    let range = getLogTimeRange();
+    console.log(range.start + ', ' + range.end);
     // 使用固定时间进行测试
-    let range = {
-        start: '2018-09-06T04:31:17.313Z',
-        end: '2018-09-06T04:36:17.313Z',
-    };
+    // let range = {
+    //     start: '2018-09-06T04:31:17.313Z',
+    //     end: '2018-09-06T04:36:17.313Z',
+    // };
     let data = {
         "from": 0,
-        "size": 8000,
+        "size": 10000,
         "query": {
             "range": {
                 "@timestamp": {
@@ -31,7 +31,7 @@ function getData() {
 
     $.ajax({
         type: "POST",
-        url: "http://172.18.196.1:9200/filebeat-6.3.2-*/doc/_search?filter_path=hits.hits._source.message",
+        url: "http://172.18.166.180:9200/filebeat-6.3.2-*/doc/_search?filter_path=hits.hits._source.message",
         dataType: "json",
         async: false,
         cache: 'false',
@@ -90,20 +90,9 @@ function getData() {
                             }
                         }
                         else if (tempType === 'service') {
-                            let findSource = false, findTarget = false;
-                            for (let key in service_map) {
-                                if (findSource && findTarget)
-                                    break;
-                                if (service_map[key].indexOf(source) !== -1) {
-                                    source = key;
-                                    findSource = true;
-                                }
-                                if (service_map[key].indexOf(target) !== -1) {
-                                    target = key;
-                                    findTarget = true;
-                                }
-                            }
-                            if (findTarget && findTarget) {
+                            source = ip_service[source];
+                            target = ip_service[target];
+                            if (source !== undefined && target != undefined) {
                                 if (nodes.indexOf(source) === -1) {
                                     nodes.push(source);
                                     nodesIP.push(source);
@@ -124,7 +113,7 @@ function getData() {
                         // $('#main').append('<p>' + line + '</p>');
                     }
                 } // if
-            }
+            } // for
 
             console.log(nodesIP);
             console.log(relation);
@@ -198,7 +187,7 @@ function drawByJsPlumb(g, links) {
             let d = document.createElement("div");
             d.className = 'node';
             d.id = v;
-            d.innerHTML = createNode(v, tempType === 'pod' ? v.replace(/\-/g, ".").substr(1) : service_name[v]);
+            d.innerHTML = createNode(v, tempType === 'pod' ? v.replace(/\-/g, ".").substr(1) : service_map[v]);
             d.style.left = g.node(v).x + "px";
             d.style.top = g.node(v).y + "px";
             instance.getContainer().appendChild(d);
@@ -227,8 +216,8 @@ function drawByJsPlumb(g, links) {
                 $('#modal-pod-performance').modal();
                 if ($('#modal-pod-performance-body').children().length === 0) {
                     $('#modal-pod-performance-body').append(
-                        '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
-                        '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
+                        '<iframe src="http://172.18.166.180:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod_name][0] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>\n' +
+                        '<iframe src="http://172.18.166.180:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod_name][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>');
                 }
             }
             else {
@@ -268,8 +257,8 @@ function createNode(id, ip) {
 
 function refreshData() {
     for (let ip of nodesIP) {
-        let url = tempType === 'pod' ? 'http://172.18.196.1:31090/api/v1/query?query=sum(rate(request_duration_seconds_sum{instance=~"' + ip + ':.*"}[1m])) / sum(rate(request_duration_seconds_count{instance=~"' + ip + ':.*"}[1m]))'
-            : 'http://172.18.196.1:31090/api/v1/query?query=sum(rate(request_duration_seconds_sum{name="' + ip + '"}[1m])) / sum(rate(request_duration_seconds_count{name="' + ip + '"}[1m]))';
+        let url = tempType === 'pod' ? 'http://172.18.166.180:31090/api/v1/query?query=sum(rate(request_duration_seconds_sum{instance=~"' + ip + ':.*"}[1m])) / sum(rate(request_duration_seconds_count{instance=~"' + ip + ':.*"}[1m]))'
+            : 'http://172.18.166.180:31090/api/v1/query?query=sum(rate(request_duration_seconds_sum{name="' + ip + '"}[1m])) / sum(rate(request_duration_seconds_count{name="' + ip + '"}[1m]))';
         $.ajax({
             dataType: 'json',
             type: "GET",
@@ -334,7 +323,7 @@ function getLatancy() {
             let d = new Date();
             let end = d.getTime();
             d.setMinutes(d.getMinutes() - 2);
-            let url = 'http://172.18.196.1:31090/api/v1/query_range?query=sum(rate(request_duration_seconds_sum%7Binstance=~"' + ip
+            let url = 'http://172.18.166.180:31090/api/v1/query_range?query=sum(rate(request_duration_seconds_sum%7Binstance=~"' + ip
                 + ':.*"%7D[1m]))/sum(rate(request_duration_seconds_count%7Binstance=~"' + ip + ':.*"%7D[1m]))&start=' + d.getTime()/1000 + '&end=' + end/1000 +
                 '&step=1s';
 
@@ -371,7 +360,7 @@ function getLatancy() {
 function show_pod_latency(pod) {
     $('#modal-cause-info-result').find('h4:eq(0)').html(pod + '时延');
     $('#modal-cause-info-result-body').empty().append(
-        '<iframe src="http://172.18.196.1:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
+        '<iframe src="http://172.18.166.180:36970/dashboard-solo/db/sock-shop?from=now-10m&to=now&panelId=' + performance_map[pod][1] + '" width="100%" height="200" frameborder="0" id="frame" name="frame"></iframe>'
     )
     $('#modal-cause-info-result').modal();
 }
@@ -451,6 +440,9 @@ function init_root_cause_table(triggered) {
 }
 
 $(document).ready(function () {
+    // 转换service_map，方便索引
+    converse();
+    // 获取conn数据
     getData();
 
     jsPlumb.ready(function () {
@@ -573,7 +565,7 @@ $(document).ready(function () {
                 let end = d.getTime();
                 d.setMinutes(d.getMinutes() - 2);
                 for (let ip of pod_ip) {
-                    let url = 'http://172.18.196.1:31090/api/v1/query_range?query=sum(rate(request_duration_seconds_sum%7Binstance=~"' + ip
+                    let url = 'http://172.18.166.180:31090/api/v1/query_range?query=sum(rate(request_duration_seconds_sum%7Binstance=~"' + ip
                         + ':.*"%7D[1m]))/sum(rate(request_duration_seconds_count%7Binstance=~"' + ip + ':.*"%7D[1m]))&start=' + d.getTime()/1000 + '&end=' + end/1000 +
                         '&step=1s';
 

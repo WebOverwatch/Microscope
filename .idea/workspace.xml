@@ -2,1429 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="205caf9c-eddf-4121-b19b-0a741a61a8d8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/API.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/FAQ.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/NEWS.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/PLUGINS.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/ajax/data-eu-gdp-growth-1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/ajax/data-eu-gdp-growth-2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/ajax/data-eu-gdp-growth-3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/ajax/data-eu-gdp-growth-4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/ajax/data-eu-gdp-growth-5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/ajax/data-eu-gdp-growth.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/ajax/data-japan-gdp-growth.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/ajax/data-usa-gdp-growth.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/ajax/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/annotating/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-interacting/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-multiple/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/date.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/africa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/antarctica" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/asia" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/australasia" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/backward" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/etcetera" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/europe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/factory" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/iso3166.tab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/leapseconds" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/northamerica" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/pacificnew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/solar87" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/solar88" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/solar89" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/southamerica" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/systemv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/yearistype.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time-zones/tz/zone.tab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/axes-time/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/basic-options/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/basic-usage/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/canvas/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/categories/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/examples.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/image/hs-2004-27-a-large-web.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/image/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/interacting/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/navigate/arrow-down.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/navigate/arrow-left.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/navigate/arrow-right.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/navigate/arrow-up.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/navigate/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/percentiles/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/realtime/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/resize/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/selection/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/series-errorbars/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/series-pie/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/series-toggle/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/series-types/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/shared/jquery-ui/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/stacking/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/symbols/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/threshold/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/tracking/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/visitors/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/examples/zooming/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/excanvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/excanvas.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/flot.jquery.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.colorhelpers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.canvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.categories.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.crosshair.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.errorbars.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.fillbetween.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.image.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.navigate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.pie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.resize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.selection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.stack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.symbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.threshold.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.flot.time.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/Flot/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/install.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/pace.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/pace.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/pace.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-barber-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-big-counter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-bounce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-center-atom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-center-circle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-center-radar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-center-simple.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-corner-indicator.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-fill-left.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-flash.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-flat-top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-loading-bar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-mac-osx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/black/pace-theme-minimal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-barber-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-big-counter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-bounce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-center-atom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-center-circle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-center-radar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-center-simple.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-corner-indicator.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-fill-left.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-flash.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-flat-top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-loading-bar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-mac-osx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/blue/pace-theme-minimal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-barber-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-big-counter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-bounce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-center-atom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-center-circle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-center-radar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-center-simple.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-corner-indicator.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-fill-left.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-flash.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-flat-top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-loading-bar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-mac-osx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/green/pace-theme-minimal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-barber-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-big-counter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-bounce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-center-atom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-center-circle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-center-radar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-center-simple.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-corner-indicator.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-fill-left.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-flash.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-flat-top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-loading-bar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-mac-osx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/orange/pace-theme-minimal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-barber-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-big-counter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-bounce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-center-atom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-center-circle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-center-radar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-center-simple.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-corner-indicator.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-fill-left.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-flash.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-flat-top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-loading-bar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-mac-osx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/pink/pace-theme-minimal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-barber-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-big-counter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-bounce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-center-atom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-center-circle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-center-radar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-center-simple.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-corner-indicator.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-fill-left.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-flash.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-flat-top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-loading-bar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-mac-osx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/purple/pace-theme-minimal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-barber-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-big-counter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-bounce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-center-atom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-center-circle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-center-radar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-center-simple.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-corner-indicator.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-fill-left.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-flash.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-flat-top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-loading-bar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-mac-osx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/red/pace-theme-minimal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-barber-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-big-counter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-bounce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-center-atom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-center-circle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-center-radar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-center-simple.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-corner-indicator.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-fill-left.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-flash.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-flat-top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-loading-bar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-mac-osx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/silver/pace-theme-minimal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-barber-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-big-counter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-bounce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-center-atom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-center-circle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-center-radar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-center-simple.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-corner-indicator.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-fill-left.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-flash.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-flat-top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-loading-bar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-mac-osx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/white/pace-theme-minimal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-barber-shop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-big-counter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-bounce.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-center-atom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-center-circle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-center-radar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-center-simple.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-corner-indicator.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-fill-left.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-flash.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-flat-top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-loading-bar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-mac-osx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/PACE/themes/yellow/pace-theme-minimal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/fullcalendar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/fullcalendar.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/fullcalendar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/fullcalendar.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/fullcalendar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/fullcalendar.print.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/fullcalendar.print.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/gcal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/gcal.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale-all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/af.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ar-dz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ar-kw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ar-ly.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ar-ma.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ar-sa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ar-tn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/bs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/cs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/de-at.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/de-ch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/el.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/en-au.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/en-ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/en-gb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/en-ie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/en-nz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/es-do.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/es-us.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/et.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/eu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/fi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/fr-ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/fr-ch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/gl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/he.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/hi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/hr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/hu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/id.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/is.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ka.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/kk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ko.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/lb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/lv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/mk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ms-my.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/nb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/nl-be.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/nl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/nn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/pt-br.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/sk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/sl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/sq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/sr-cyrl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/sr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/sv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/th.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/uk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/zh-cn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/fullcalendar/dist/locale/zh-tw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/dist/jquery.knob.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/excanvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/js/jquery.knob.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/knob.jquery.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-knob/secretplan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/allow-page-scroll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/chaining.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/disable-fade-out.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/dynamic-content.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/height-width.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/libs/prettify/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/libs/prettify/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/mouse-wheel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/multiple-elements.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/navigation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/nested.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/programmatic-scrolling.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/rail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/scroll-events.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/scrollbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/start-position.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/examples/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/jquery.slimscroll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/jquery.slimscroll.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-slimscroll/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/Changelog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/dist/jquery.sparkline.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/minheader.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/sparkline.jquery.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/chart-bar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/chart-box.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/chart-bullet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/chart-discrete.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/chart-line.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/chart-pie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/chart-tristate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/defaults.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/footer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/interact.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/rangemap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/simpledraw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/vcanvas-base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/vcanvas-canvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/src/vcanvas-vml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jquery-sparkline/version.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/LICENSE-AGPL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/LICENSE-COMMERCIAL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/build.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/converter/converter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/converter/processor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/converter/simplifier.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/jquery-jvectormap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/jquery-jvectormap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/jvectormap.jquery.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/lib/jquery-mousewheel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/abstract-canvas-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/abstract-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/abstract-shape-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/color-scale.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/data-series.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/jvectormap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/legend.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/map-object.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/marker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/multimap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/numeric-scale.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/ordinal-scale.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/proj.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/region.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/simple-scale.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/svg-canvas-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/svg-circle-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/svg-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/svg-group-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/svg-image-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/svg-path-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/svg-shape-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/svg-text-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/vector-canvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/vml-canvas-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/vml-circle-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/vml-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/vml-group-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/vml-image-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/vml-path-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/src/vml-shape-element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/bg-red-green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/bg-yellow-blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/icon-bank.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/icon-factory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/jquery-1.8.2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/jquery-jvectormap-data-us-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/jquery-jvectormap-map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/jquery-jvectormap-us-aea-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/jquery-jvectormap-us-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/jquery-jvectormap-us-merc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/jquery-jvectormap-us-mill-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ak-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-al-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ar-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-az-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ca-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-co-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ct-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-dc-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-de-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-fl-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ga-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-hi-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ia-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-id-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-il-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-in-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ks-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ky-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-la-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ma-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-md-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-me-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-mi-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-mn-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-mo-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ms-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-mt-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-nc-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-nd-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ne-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-nh-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-nj-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-nm-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-nv-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ny-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-oh-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ok-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-or-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-pa-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ri-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-sc-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-sd-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-tn-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-tx-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-ut-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-va-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-vt-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-wa-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-wi-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-wv-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/assets/us/jquery-jvectormap-data-us-wy-lcc-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/build.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/custom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/drill-down.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/hidden.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/markers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/memory.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/processor/continents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/processor/continents_wb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/processor/france_regions_2016.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/processor/russia.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/processor/russia_fd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/processor/tz.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/reverse-projection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/us.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/jvectormap/tests/world.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/mocha/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/mocha/History.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/mocha/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/mocha/Readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/mocha/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/mocha/media/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/mocha/mocha.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/mocha/mocha.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/af.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ar-dz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ar-kw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ar-ly.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ar-ma.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ar-sa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ar-tn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/az.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/be.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/bm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/bn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/bo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/br.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/bs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/cs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/cv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/cy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/de-at.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/de-ch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/dv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/el.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/en-au.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/en-ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/en-gb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/en-ie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/en-nz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/eo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/es-do.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/es-us.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/et.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/eu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/fi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/fo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/fr-ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/fr-ch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/fy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/gd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/gl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/gom-latn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/gu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/he.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/hi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/hr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/hu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/hy-am.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/id.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/is.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/jv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ka.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/kk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/km.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/kn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ko.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ky.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/lb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/lo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/lv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/me.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/mi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/mk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/mr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ms-my.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/mt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/my.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/nb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ne.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/nl-be.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/nl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/nn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/pa-in.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/pt-br.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/sd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/se.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/si.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/sk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/sl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/sq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/sr-cyrl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/sr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ss.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/sv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/sw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/te.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/tet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/th.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/tl-ph.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/tlh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/tzl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/tzm-latn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/tzm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/uk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/ur.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/uz-latn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/uz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/x-pseudo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/yo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/zh-cn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/zh-hk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/locale/zh-tw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/min/locales.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/min/locales.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/min/moment-with-locales.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/min/moment-with-locales.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/min/moment.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/moment.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/moment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/check-overflow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/date-from-array.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/from-anything.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/from-array.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/from-object.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/from-string-and-array.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/from-string-and-format.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/from-string.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/local.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/parsing-flags.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/utc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/create/valid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/abs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/add-subtract.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/as.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/bubble.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/clone.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/constructor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/create.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/duration.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/get.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/humanize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/iso-string.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/prototype.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/duration/valid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/format/format.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/base-config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/calendar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/constructor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/formats.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/invalid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/lists.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/locale.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/locales.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/ordinal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/pre-post-format.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/prototype.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/relative.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/locale/set.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/add-subtract.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/calendar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/clone.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/compare.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/constructor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/creation-data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/diff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/format.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/from.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/get-set.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/locale.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/min-max.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/moment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/now.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/prototype.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/start-end-of.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/to-type.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/to.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/moment/valid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/parse/regex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/parse/token.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/aliases.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/day-of-month.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/day-of-week.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/day-of-year.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/hour.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/millisecond.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/minute.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/month.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/offset.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/priorities.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/quarter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/second.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/timestamp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/timezone.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/units.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/week-calendar-utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/week-year.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/week.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/units/year.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/abs-ceil.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/abs-floor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/abs-round.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/compare-arrays.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/defaults.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/deprecate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/extend.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/has-own-prop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/hooks.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/index-of.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/is-array.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/is-date.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/is-function.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/is-number.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/is-object-empty.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/is-object.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/is-undefined.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/keys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/mod.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/some.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/to-int.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/lib/utils/zero-fill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/af.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ar-dz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ar-kw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ar-ly.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ar-ma.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ar-sa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ar-tn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/az.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/be.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/bm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/bn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/bo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/br.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/bs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/cs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/cv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/cy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/de-at.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/de-ch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/dv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/el.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/en-au.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/en-ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/en-gb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/en-ie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/en-nz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/eo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/es-do.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/es-us.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/et.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/eu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/fi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/fo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/fr-ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/fr-ch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/fy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/gd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/gl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/gom-latn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/gu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/he.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/hi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/hr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/hu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/hy-am.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/id.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/is.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/jv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ka.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/kk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/km.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/kn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ko.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ky.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/lb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/lo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/lv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/me.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/mi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/mk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/mr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ms-my.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/mt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/my.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/nb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ne.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/nl-be.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/nl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/nn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/pa-in.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/pt-br.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/sd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/se.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/si.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/sk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/sl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/sq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/sr-cyrl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/sr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ss.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/sv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/sw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/te.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/tet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/th.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/tl-ph.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/tlh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/tzl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/tzm-latn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/tzm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/uk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/ur.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/uz-latn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/uz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/x-pseudo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/yo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/zh-cn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/zh-hk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/locale/zh-tw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/src/moment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/templates/default.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/templates/locale-header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/moment/templates/test-header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/bower.travis.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/_template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/area-as-line.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/area.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/bar-colors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/bar-no-axes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/bar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/days.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/decimal-custom-hover.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/diagonal-xlabels-bar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/diagonal-xlabels.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/donut-colors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/donut-formatter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/donut.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/dst.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/events.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/goals.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/lib/example.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/lib/example.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/months-no-smooth.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/negative.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/no-grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/non-continuous.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/non-date.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/quarters.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/resize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/stacked_bars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/timestamps.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/updating.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/weeks.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/examples/years.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/less/morris.core.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/lib/morris.area.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/lib/morris.bar.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/lib/morris.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/lib/morris.donut.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/lib/morris.grid.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/lib/morris.hover.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/lib/morris.line.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/morris.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/morris.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/morris.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/area/area_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/bar/bar_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/bar/colours.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/commas_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/donut/donut_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/grid/auto_grid_lines_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/grid/set_data_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/grid/y_label_format_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/hover_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/label_series_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/line/line_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/pad_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/lib/parse_time_spec.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/specs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/support/placeholder.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/viz/examples.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/viz/exemplary/area0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/viz/exemplary/bar0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/viz/exemplary/line0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/viz/exemplary/stacked_bar0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/viz/run.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/morris.js/spec/viz/visual_specs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/dev/banner.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/dev/raphael.amd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/dev/raphael.core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/dev/raphael.svg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/dev/raphael.vml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/dev/test/svg/dom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/dev/test/vml/dom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/raphael.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/raphael.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/raphael.no-deps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/raphael.no-deps.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/webpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/raphael/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/.bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/.github/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/.jshintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/.jshintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/css/select2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/css/select2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/af.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/ar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/az.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/bs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/cs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/dsb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/el.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/et.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/eu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/fi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/gl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/he.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/hi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/hr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/hsb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/hu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/hy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/id.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/is.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/km.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/ko.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/lv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/mk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/ms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/nb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/nl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/ps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/pt-BR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/ro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/sk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/sl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/sr-Cyrl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/sr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/sv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/th.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/uk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/zh-CN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/i18n/zh-TW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/select2.full.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/select2.full.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/select2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/dist/js/select2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/docs/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/docs/announcements-4.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/docs/community.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/docs/examples.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/docs/options-old.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/docs/options.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/select2.jquery.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/banner.end.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/banner.start.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/jquery.mousewheel.shim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/jquery.select2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/jquery.shim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/compat/containerCss.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/compat/dropdownCss.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/compat/initSelection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/compat/inputData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/compat/matcher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/compat/query.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/compat/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/data/ajax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/data/array.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/data/base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/data/maximumInputLength.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/data/maximumSelectionLength.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/data/minimumInputLength.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/data/select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/data/tags.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/data/tokenizer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/defaults.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/diacritics.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/dropdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/dropdown/attachBody.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/dropdown/attachContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/dropdown/closeOnSelect.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/dropdown/hidePlaceholder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/dropdown/infiniteScroll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/dropdown/minimumResultsForSearch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/dropdown/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/dropdown/selectOnClose.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/dropdown/stopPropagation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/af.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/ar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/az.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/bs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/cs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/dsb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/el.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/et.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/eu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/fi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/gl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/he.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/hi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/hr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/hsb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/hu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/hy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/id.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/is.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/km.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/ko.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/lv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/mk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/ms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/nb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/nl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/ps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/pt-BR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/ro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/sk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/sl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/sr-Cyrl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/sr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/sv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/th.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/uk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/zh-CN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/i18n/zh-TW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/keys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/options.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/results.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/selection/allowClear.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/selection/base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/selection/clickMask.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/selection/eventRelay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/selection/multiple.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/selection/placeholder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/selection/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/selection/single.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/selection/stopPropagation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/translation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/select2/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/wrapper.end.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/js/wrapper.start.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/_dropdown.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/_multiple.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/_single.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/core.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/mixins/_gradients.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/theme/classic/_defaults.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/theme/classic/_multiple.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/theme/classic/_single.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/theme/classic/layout.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/theme/default/_multiple.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/theme/default/_single.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/src/scss/theme/default/layout.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/a11y/search-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/a11y/selection-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/data/array-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/data/base-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/data/inputData-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/data/maximumInputLength-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/data/maximumSelectionLength-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/data/minimumInputLength-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/data/select-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/data/tags-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/data/tokenizer-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/dropdown/dropdownCss-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/dropdown/positioning-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/dropdown/selectOnClose-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/dropdown/stopPropagation-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/helpers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/integration.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/integration/dom-changes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/integration/jquery-calls.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/integration/select2-methods.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/options/ajax-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/options/data-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/options/deprecated-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/options/translation-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/options/width-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/results/focusing-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/selection/allowClear-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/selection/containerCss-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/selection/multiple-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/selection/placeholder-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/selection/search-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/selection/single-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/selection/stopPropagation-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/unit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/utils/decorator-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/utils/escapeMarkup-tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/vendor/jquery-1.7.2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/vendor/qunit-1.23.1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/vendor/qunit-1.23.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/vendor/jquery-2.1.0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/.csscomb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/.csslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/alerts.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/badges.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/bootstrap.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/breadcrumbs.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/button-groups.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/buttons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/carousel.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/close.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/code.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/component-animations.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/dropdowns.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/forms.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/glyphicons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/grid.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/input-groups.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/jumbotron.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/labels.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/list-group.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/media.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/alerts.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/background-variant.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/border-radius.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/buttons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/center-block.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/clearfix.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/forms.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/gradients.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/grid-framework.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/grid.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/hide-text.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/image.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/labels.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/list-group.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/nav-divider.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/nav-vertical-align.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/opacity.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/pagination.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/panels.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/progress-bar.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/reset-filter.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/reset-text.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/resize.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/responsive-visibility.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/size.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/tab-focus.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/table-row.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/text-emphasis.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/text-overflow.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/mixins/vendor-prefixes.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/modals.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/navbar.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/navs.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/normalize.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/pager.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/pagination.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/panels.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/popovers.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/print.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/progress-bars.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/responsive-embed.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/responsive-utilities.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/scaffolding.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/tables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/theme.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/thumbnails.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/tooltip.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/type.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/utilities.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/variables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bootstrap-less/wells.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/grunt/.jshintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/.jscsrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/.jshintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/BoxRefresh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/BoxWidget.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/ControlSidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/DirectChat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/Layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/PushMenu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/TodoList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/js/Tree.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/.csslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/404_500_errors.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/AdminLTE-without-plugins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/AdminLTE.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/alerts.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/bootstrap-social.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/boxes.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/buttons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/callout.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/carousel.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/control-sidebar.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/core.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/datepicker.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/direct-chat.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/dropdown.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/forms.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/fullcalendar.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/header.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/info-box.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/invoice.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/labels.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/lockscreen.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/login_and_register.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/mailbox.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/miscellaneous.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/mixins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/modal.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/navs.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/plugins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/print.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/products.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/profile.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/progress-bars.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/select2.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/sidebar-mini.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/sidebar.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/_all-skins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-black-light.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-black.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-blue-light.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-blue.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-green-light.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-green.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-purple-light.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-purple.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-red-light.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-red.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-yellow-light.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/skins/skin-yellow.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/small-box.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/social-widgets.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/table.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/timeline.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/treeview.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/users-list.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/less/variables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/changelog.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/graph.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/graph.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/algorithms.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/algorithms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/js/buildGraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/buildGraph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/adminlte-options.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/advice.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/browsers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/components.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/dependencies.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/download.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/faq.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/implementations.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/introduction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/license.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/plugins.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/include/upgrade.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/build/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/docs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/map.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/UI/buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/UI/general.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/UI/icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/UI/modals.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/UI/sliders.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/UI/timeline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/charts/chartjs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/charts/flot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/charts/inline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/charts/morris.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/examples/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/examples/500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/examples/blank.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/examples/invoice-print.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/examples/invoice.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/examples/lockscreen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/examples/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/examples/pace.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/examples/profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/examples/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/forms/advanced.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/forms/editors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/forms/general.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/map-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/map-data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/graph.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/graph.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/layout/boxed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/layout/collapsed-sidebar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/layout/fixed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/layout/top-nav.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mailbox/compose.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mailbox/mailbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mailbox/read-mail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/tables/data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/tables/simple.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter - ljj.html" beforeDir="false" afterPath="$PROJECT_DIR$/starter - ljj.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -1441,7 +23,7 @@
       <file leaf-file-name="graph.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/css/graph.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
+            <state relative-caret-position="3312">
               <caret line="138" column="12" selection-start-line="138" selection-start-column="12" selection-end-line="138" selection-end-column="12" />
             </state>
           </provider>
@@ -1450,22 +32,17 @@
       <file leaf-file-name="graph.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/graph.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1055">
-              <caret line="471" column="54" lean-forward="true" selection-start-line="471" selection-start-column="54" selection-end-line="471" selection-end-column="54" />
-              <folding>
-                <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="640">
+              <caret line="415" column="30" selection-start-line="415" selection-start-column="30" selection-end-line="415" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buildGraph.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="buildGraph.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/js/buildGraph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1599">
-              <caret line="432" column="200" selection-start-line="432" selection-start-column="200" selection-end-line="432" selection-end-column="200" />
+            <state relative-caret-position="720">
+              <caret line="444" column="15" selection-start-line="444" selection-start-column="15" selection-end-line="444" selection-end-column="15" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
               </folding>
@@ -1476,26 +53,17 @@
       <file leaf-file-name="algorithms.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/js/algorithms.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="166" column="25" selection-start-line="166" selection-start-column="25" selection-end-line="166" selection-end-column="25" />
+            <state relative-caret-position="-405">
+              <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="starter - ljj.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/starter - ljj.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="387" column="29" selection-start-line="387" selection-start-column="13" selection-end-line="387" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map-data.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="map-data.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/js/map-data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="49" />
+            <state relative-caret-position="72">
+              <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -1513,10 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>22385</find>
-      <find>title</find>
-      <find>172.20.3.92</find>
-      <find>sock-shop</find>
       <find>Mircoscope</find>
       <find>font</find>
       <find>fonts.g</find>
@@ -1543,6 +107,10 @@
       <find>causeInfoClicked</find>
       <find>eq</find>
       <find>btn-white-self</find>
+      <find>172.20.2.52</find>
+      <find>172.20.5.68</find>
+      <find>172.20.6.45</find>
+      <find>172.18.196.1</find>
     </findStrings>
     <replaceStrings>
       <replace>-</replace>
@@ -1554,6 +122,7 @@
       <replace>36970</replace>
       <replace>STR_FRONT_END</replace>
       <replace>cause_info_score</replace>
+      <replace>172.18.166.180</replace>
     </replaceStrings>
     <dirStrings>
       <dir>E:\Microscope</dir>
@@ -1573,13 +142,13 @@
         <option value="$PROJECT_DIR$/dist/js/fancySelect.js" />
         <option value="$PROJECT_DIR$/pages/UI/modals.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/starter - ljj.html" />
         <option value="$PROJECT_DIR$/dist/js/pearson-correlation.js" />
-        <option value="$PROJECT_DIR$/dist/js/map-data.js" />
         <option value="$PROJECT_DIR$/dist/js/algorithms.js" />
-        <option value="$PROJECT_DIR$/pages/graph.html" />
         <option value="$PROJECT_DIR$/dist/css/graph.css" />
+        <option value="$PROJECT_DIR$/starter - ljj.html" />
+        <option value="$PROJECT_DIR$/pages/graph.html" />
         <option value="$PROJECT_DIR$/dist/js/buildGraph.js" />
+        <option value="$PROJECT_DIR$/dist/js/map-data.js" />
       </list>
     </option>
   </component>
@@ -1610,15 +179,14 @@
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="918" />
-    <option name="height" value="867" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1635,6 +203,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1642,7 +211,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="$USER_HOME$/AppData/Roaming/npm/node_modules/grunt-cli" />
-    <property name="last_opened_file_path" value="E:/Microscope - 副本" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -1710,14 +279,16 @@
       <workItem from="1536156287906" duration="24953000" />
       <workItem from="1536239149367" duration="7267000" />
       <workItem from="1536311303615" duration="5867000" />
+      <workItem from="1536501611959" duration="57000" />
+      <workItem from="1536583865238" duration="10623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234228000" />
+    <option name="totallyTimeSpent" value="244908000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9454744" visible="true" weight="0.16174921" />
@@ -1763,11 +334,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9306">
           <caret line="423" column="44" selection-start-line="423" selection-start-column="44" selection-end-line="423" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1809,11 +375,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5412">
           <caret line="246" column="17" lean-forward="true" selection-start-line="246" selection-start-column="17" selection-end-line="246" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1989,53 +550,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/js/map-data.js">
+    <entry file="file://$PROJECT_DIR$/dist/css/graph.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="49" />
+        <state relative-caret-position="3312">
+          <caret line="138" column="12" selection-start-line="138" selection-start-column="12" selection-end-line="138" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/starter - ljj.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="387" column="29" selection-start-line="387" selection-start-column="13" selection-end-line="387" selection-end-column="29" />
+        <state relative-caret-position="557">
+          <caret line="270" column="50" selection-start-line="270" selection-start-column="50" selection-end-line="270" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/js/algorithms.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="166" column="25" selection-start-line="166" selection-start-column="25" selection-end-line="166" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/graph.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1055">
-          <caret line="471" column="54" lean-forward="true" selection-start-line="471" selection-start-column="54" selection-end-line="471" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/css/graph.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="138" column="12" selection-start-line="138" selection-start-column="12" selection-end-line="138" selection-end-column="12" />
+        <state relative-caret-position="-405">
+          <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/js/buildGraph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1599">
-          <caret line="432" column="200" selection-start-line="432" selection-start-column="200" selection-end-line="432" selection-end-column="200" />
+        <state relative-caret-position="720">
+          <caret line="444" column="15" selection-start-line="444" selection-start-column="15" selection-end-line="444" selection-end-column="15" />
           <folding>
             <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/graph.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="415" column="30" selection-start-line="415" selection-start-column="30" selection-end-line="415" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/js/map-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
         </state>
       </provider>
     </entry>
